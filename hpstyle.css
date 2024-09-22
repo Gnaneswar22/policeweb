@@ -1,0 +1,154 @@
+*{
+    margin: 0%;
+    padding: 0%;   
+    color: white;
+    .poppins-thin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+      
+      .poppins-extralight {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+      }
+      
+      .poppins-light {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      
+      .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .poppins-semibold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+      
+      .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+
+}
+h1{
+    text-align: left;
+    text-decoration: solid;
+    font-size: 50px;
+
+    
+}
+.headlines{
+    transition: 1s;
+    background-color: rgb(101, 120, 155);
+    font-style:italic;
+    font-weight: lighter;
+    padding: 0.7px;
+    margin: 10px;
+    
+}
+.sklm{
+    color:rgba(209, 36, 36, 0.87);
+     text-align: left;
+    text-decoration: solid;
+    font-size: 50px;
+
+
+}
+.sk{
+    color:white;
+    font-size: 30px;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0.8)),url(bg.jpg) ;
+    background-position:center;
+    background-size:cover;
+    position: relative;
+    backdrop-filter: blur(10px);
+   
+
+}
+.nav h1
+{
+    font: size 40px;
+}
+.nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: right;
+}
+nav img{
+   width: 130px;
+   float: left;
+}
+.nav-links{
+flex: 1;
+text-align: center;
+backdrop-filter: blur(20px);
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    border-color: white;
+}
+.nav-links ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 15px;
+}
+.nav-links ul li ::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;  
+      display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.nav-links ul li :hover::after{
+    width: 100%;
+}
+.i1{
+    align-items: center;
+    float: center;
+   border: white;
+}
+.text-box{
+    width: 90%;
+    color:#fff ;
+    position: absolute;
+    top: 40%;
+    left:6%;
+
+}
+.text-box h1{
+    font-size: 50px;
+    
+}
+.text-box p{
+    font-size: 20px;
+}
+.sp{
+    background-color: white;
+   align-content: center;
+   position: relative;
+   margin: 5%;
+   padding:10px;
+   margin-top: auto;
+   margin-left: 1%;
+   
+}
