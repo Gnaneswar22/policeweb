@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikakulam Police Department</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003366;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav {
+            background-color: #00509e;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            background-color: #003366;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .services-head {
+            font-size: 24px;
+            color: #00509e;
+            margin-bottom: 20px;
+        }
+
+        .service-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .service-item img {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #00509e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="applogo.png" alt="AP Police Logo" />
+        <h1>Srikakulam Police Department</h1>
+        <img src="sklmplc.png" alt="Srikakulam Police Logo" />
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#organization">Organization</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#women">Women's Corner</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#info">Information</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2 class="services-head">Services</h2>
+
+        <!-- Service Icons Section -->
+        <div class="service-icons">
+            <div class="service-item">
+                <img src="lost.png.jpeg" alt="Lost Report Icon" />
+                <p>Lost Report</p>
+            </div>
+            <div class="service-item">
+                <img src="fir.png.png" alt="View FIR Icon" />
+                <p>View FIR</p>
+            </div>
+            <div class="service-item">
+                <img src="domvio.png.png" alt="Domestic Violence Icon" />
+                <p>Domestic Violence</p>
+            </div>
+            <div class="service-item">
+                <img src="aa.png.png" alt="Accident Analysis Icon" />
+                <p>Accident Analysis</p>
+            </div>
+            <div class="service-item">
+                <img src="cyber.png.jpeg" alt="Cyber Cell Icon" />
+                <p>Cyber Cell</p>
+            </div>
+            <div class="service-item">
+                <img src="echallana.png.png" alt="E-Challan Status Icon" />
+                <p>E-Challan Status</p>
+            </div>
+            <div class="service-item">
+                <img src="speaker.png.jpeg" alt="loud speaker permission" />
+                <p>Loud Speaker Permission</p>
+            </div>
+            <div class="service-item">
+                <img src="kyps.png.png" alt="Know Your Police Station Icon" />
+                <p>Know Your Police Station</p>
+            </div>
+            <div class="service-item">
+                <img src="loc.png.jpeg" alt="Locate Police Station Icon" />
+                <p>Locate Your Police Station</p>
+            </div>
+            <div class="service-item">
+                <img src="gps.png.png" alt="GPS Icon" />
+                <p>GPS</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

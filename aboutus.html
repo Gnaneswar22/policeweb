@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikakulam Police Department</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #00336600;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav {
+            background-color: #00509e;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            background-color: #003366;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 14px;
+            padding: 5px 0;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        .card-1 {
+            background-color: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 9px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 1000px;
+            margin: 20px;
+            padding: 20px;
+        }
+        .div slider{
+            align-items: center;
+        }
+        #slider{
+            overflow: hidden;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        
+        }
+        #slider figure{
+           position:relative;
+           width: 500%;
+           margin: 10px;
+           left:0;
+           animation: 15s slider infinite;
+        }
+        #slider figure img{
+            float: left;
+            width: 20%;
+            justify-content: center;
+        }
+        @keyframes slider{
+            0%{
+                left: 0;
+        
+            }
+            20%{
+                left:0;
+            }
+            25%{
+                left:-100%
+            }
+            45%{
+                left:-100%
+            }
+            50%{
+                left:-200%;
+            }
+            70%{
+                left: -200%;
+            }
+            75%{
+                left:-300%;
+            }
+            95%{
+                left: -300%;
+            }
+            100%{
+                left:-400%;
+            }
+        }
+
+        footer {
+            background-color: #00509e;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="ap_police_logo.png" alt="AP Police Logo" />
+        <h1>Srikakulam Police Department</h1>
+        <img src="srikakulam_police_logo.png" alt="Srikakulam Police Logo" />
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#organization">Organization</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#women">Women's Corner</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#info">Information</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2 class="services-head">ABOUT US</h2>
+        <div class="card">
+            <h2>srikakulam Area & Population</h2>
+            <ul>
+                <li>Area:</li>
+                <li>Population:</li>
+                <li>District:</li>
+                <li>State:</li>
+                <li>Country:</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Public Bodies</h2>
+            <ul>
+                <li>Mandal Parishad Territorial Constituencies:</li>
+                <li>Zilla Parishad Territorial Constituencies:</li>
+                <li>Gram Panchayats:</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Legislative Constituencies</h2>
+            <ul>
+                <li>Member of Parliament (Full):</li>
+                <li>Member of Parliament (Part):</li>
+                <li>Member of Legislative Assembly (Full):</li>
+                <li>Member of Legislative Assembly (Part):</li>
+            </ul>
+        </div>
+
+        <div class="card-1">
+            <h2>Police Offices</h2>
+            <ul>
+                <li>Law & Order Zones:</li>
+                <li>Law & Order Divisions:</li>
+                <li>Law & Order Police Stations:</li>
+                <li>Women Police Stations:</li>
+                <li>Traffic Police Zones:</li>
+                <li>Traffic Police Divisions:</li>
+                <li>Traffic Police Stations:</li>
+                <li>Special Operation Team:</li>
+                <li>Cyber Crime Stations:</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slideshow Section -->
+    <div class="container">
+        <div id="slider">
+        <figure>
+          <img src="103.jpg">
+          <img src="102.jpg">
+          <img src="93.jpg">
+          <img src="106.jpg">
+          <img src="103.jpg">
+        </figure>
+      </div>
+      </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

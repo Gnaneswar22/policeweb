@@ -7,27 +7,62 @@
     <link rel="stylesheet" href="hpstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <style type="text/css">
+      .MF{
+        COLOR:RED;
+        
+      }
+      .police{
+        color: white;
+      }
       .skm{
          float: right;
       }
       .sm{
         float: right;
       }
-     
+    
+        section {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .facts {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .fact {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 23%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .fact img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .fact p {
+            margin-top: 10px;
+        }
     </style>
-</head>
-<body>
+
+
    <section class="header">
     <nav>
       <a href="homepage.html" ><img  class="skm" src="applogo.png" ></a>
         <a href="homepage.html" ><img src="sklmplc.png" id="img1"></a><br>
-        <h1 class="sklm">SRIKAKULAM</h1> <h1>POLICE</h1><hr>
+        <h1 class="sklm">SRIKAKULAM</h1> <h1 class="police">POLICE</h1><hr>
         <div class="nav-links">
         <ul>
            <li><a href="">HOME</a></li>
-           <li><a href="">ABOUT US</a></li>
+           <li><a href="aboutus.html">ABOUT US</a></li>
            <li><a href="">KNOW YOUR POLICE STATION</a></li>
-           <li><a href="">SERVICES</a></li>
+           <li><a href="services.html">SERVICES</a></li>
            <li><a href="">NOIFICATIONS</a></li>
            <li><a href="">CONTACT</a></li>
            <li><a href="">LOGIN</a></li>
@@ -62,29 +97,82 @@
             </div>
             </div>
               
-                   <div id="needs" >
-                    <figure>
-                    <a href=""><img src="emrnum.jpg" > </a>
-                    <a href=""><img src="msg.jpg" > </a>
-                    <a href=""><img src="rti.jpg" > </a>
-                    <a href=""><img src="cier.jpg" > </a>
-                    <a href=""><img src="recute.jpg" > </a>
-                    </figure>
-
-
-                   </div
-                   
-
                  
-                   <div class="sm">
-                    <figure>
-                      <a href=""><img src="twitter.png" width="2%" > </a>
-                      <a href=""><img src="whatsapp.png"width="2%" > </a>
-                      <a href="https://www.youtube.com/"><img src="youtube.png" width="2%"> </a>
-                      <a href=""><img src="instagram.png"width="2%" > </a>
-                      <a href=" "><img src="facebook.png" width="2%"> </a>
-                      </figure>
-                   </div>
+                   <br><hr>
+                   <header>
+                   
+                </header>
+                
+                <section>
+                    <h2 CLASS="MF" >Major Concerns in the Region</h2>
+                    <div class="facts">
+                        <div class="fact">
+                            <img src="women_trafficking.jpg" alt="Women Trafficking">
+                            <p>Stop Women Trafficking: Protect vulnerable lives.</p>
+                        </div>
+                        <div class="fact">
+                            <img src="drugs.jpg" alt="Drugs">
+                            <p>Say No to Drugs: Keep our community safe and drug-free.</p>
+                        </div>
+                        <div class="fact">
+                            <img src="dont_drink_and_drive.jpg" alt="Don't Drink and Drive">
+                            <p>Don't Drink and Drive: Stay responsible, save lives.</p>
+                        </div>
+                        <div class="fact">
+                            <img src="safety.jpg" alt="Safety">
+                            <p>Prioritize Safety: Follow rules for a safer society.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <script>
+                    const images = [
+                        "women_trafficking.jpg", 
+                        "drugs.jpg", 
+                        "dont_drink_and_drive.jpg", 
+                        "safety.jpg"
+                    ];
+                
+                    const facts = document.querySelectorAll('.fact img');
+                    
+                    let index = 0;
+                
+                    function changeImages() {
+                        facts.forEach((fact, i) => {
+                            fact.src = images[(index + i) % images.length];
+                        });
+                        index = (index + 1) % images.length;
+                    }
+                
+                    setInterval(changeImages, 1000); // Change images every 3 seconds
+                </script>
+
+                 <hr>
+
+                <div id="needs" >
+                  <figure>
+                  <a href=""><img src="emrnum.jpg" > </a>
+                  <a href=""><img src="msg.jpg" > </a>
+                  <a href=""><img src="rti.jpg" > </a>
+                  <a href=""><img src="cier.jpg" > </a>
+                  <a href=""><img src="recute.jpg" > </a>
+                  </figure>
+
+
+                </div
+
+
+
+                                
+                                  <div class="sm">
+                                    <figure>
+                                      <a href=""><img src="twitter.png" width="2%" > </a>
+                                      <a href=""><img src="whatsapp.png"width="2%" > </a>
+                                      <a href="https://www.youtube.com/"><img src="youtube.png" width="2%"> </a>
+                                      <a href=""><img src="instagram.png"width="2%" > </a>
+                                      <a href=" "><img src="facebook.png" width="2%"> </a>
+                                      </figure>
+                                  </div>
 
                 
          

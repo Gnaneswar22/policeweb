@@ -220,7 +220,50 @@ backdrop-filter: blur(20px);
   
 
 }
-#div sm{ 
-      margin-left: 10px;
-      float: right;
+.container .news{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200%;
+    width: 100%;
+    align-content: center;
+     margin-left: 10px;
+    
+
+}
+.news{
+    border-width: 1px;
+    background-color: rgb(228, 222, 226);
+    font-style:italic;
+    font-weight: lighter;
+    padding: 0.2px;
+    margin: 3px;
+    height: 250px;
+    font-size:20px;
+ text-align: center;
+
+   width:100%;
+   height:100%;
+   font-weight:bold;
+   animation: news 10s infinite;
+}
+ 
+ @keyframes news {
+   0% {color: red;}
+   25%{color:yellow;}
+   50%{color:green;}
+   75%{color:brown;}
+   100% {color: red;}
+ }
+    
+.container .rn{
+    align-items: center;
+ background-color: rgb(77, 13, 238);
+ padding: 10px;
+ margin: 1PX;
+ margin-left: 10PX;
+ border-width: 10PX;
+width: 45%;
+ 
 }
