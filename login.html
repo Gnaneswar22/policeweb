@@ -1,120 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Police Department Login</title>
-    <link rel="stylesheet" href="styles.css">
-      <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        
-        header {
-            background-color: #00509e;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .login-section {
-            width: 300px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .input-group {
-            margin-bottom: 15px;
-        }
-        
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #555;
+    <title>Login Page </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  padding: 0 15px;
+  min-height: 100vh;
+  justify-content: left;
+  background: #f0f2f5;
+  padding-right: 38%
+}
+
+.login-page {
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.login-page .text {
+  margin-bottom: 90px;
+  align-content:center;
+  justify-content: baseline;
+  justify-content: center;
+}
+
+.login-page h1 {
+  color: #1877f2;
+  font-size: 4rem;
+  margin-bottom: 10px;
+  
+  justify-content: center;
+  align-content: center;
+  padding-left: 200%;
+  margin-left: 130%;
+  padding-bottom: 220%;
+}
+
+.login-page p {
+  font-size: 1.75rem;
+  white-space: nowrap;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+form input {
+  height: 55px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  padding: 0 14px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #1877f2;
+}
+
+::placeholder {
+  color: #777;
+  font-size: 1.063rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.link .login {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #1877f2;
+  padding: 15px 0;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.link .login:hover {
+  background: #0d65d9;
+}
+
+form a {
+  text-decoration: none;
+}
+
+.link .forgot {
+  color: #e01638;
+  font-size: 18px;
+}
+
+.link .forgot:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.button {
+  margin-top: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button a {
+  padding: 15px 20px;
+  background:  #0d65d9;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.063rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.button a:hover {
+  background:  #0d65d9;
+}
 
 
-        }
-        footer {
-            background-color: #00509e;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-      </style>
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .login-page .text {
+    margin-bottom: 30px;
+  }
+}
 
-</head>
-<body>
-    <header>
-        <h1>Srikakulam Police Department</h1>
-    </header>
+@media (max-width: 460px) {
+  .login-page h1 {
+    font-size: 3.5rem;
+  }
 
-    <section class="login-section">
-        <h2>Login</h2>
-        <form action="login.php" method="POST">
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Login</button>
+  .login-page p {
+    font-size: 1.3rem;
+  }
+
+  form {
+    padding: 15px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+    <div class="container flex">
+      <div class="login-page flex">
+        <div class="text">
+          <h1>LOGIN</h1>
+         
+        </div>
+        <form action="#">
+          <input type="email" placeholder="Email or phone number" required>
+          <input type="password" placeholder="Password" required>
+          <div class="link">
+            <button type="submit" class="login">Login</button>
+            <a href="forgot.html" class="forgot">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="button">
+            <a href="createnew.html">Create new account</a>
+          </div>
         </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Srikakulam Police Department</p>
-    </footer>
-</body>
+      </div>
+    </div>
+    </div>
+  </body>
 </html>
