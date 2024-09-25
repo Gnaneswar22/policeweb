@@ -4,7 +4,7 @@
    <title>Srikakulam City Police</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hpstyle.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <style type="text/css">
       .MF{
@@ -49,6 +49,275 @@
         .fact p {
             margin-top: 10px;
         }
+        *{
+    margin: 0%;
+    padding: 0%;   
+    color: white;
+    .poppins-thin {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+      
+      .poppins-extralight {
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+      }
+      
+      .poppins-light {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      
+      .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .poppins-semibold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+      
+      .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+
+}
+h1{
+    text-align: left;
+    text-decoration: solid;
+    font-size: 50px;
+
+    
+}
+.headlines{
+    transition: 1s;
+    background-color: rgb(101, 120, 155);
+    font-style:italic;
+    font-weight: lighter;
+    padding: 0.8px;
+    margin: 20px;
+    height: 40px;
+    font-size:25px;
+
+    
+}
+.sklm{
+    color:rgba(209, 36, 36, 0.87);
+     text-align: left;
+    text-decoration: solid;
+    font-size: 50px;
+
+
+}
+.sk{
+    color:white;
+    font-size: 30px;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,1),rgba(4,9,30,1)),url(bg.png) ;
+    background-position:center;
+    background-size:cover;
+    position: relative;
+     backdrop-filter: blur(10px);
+   
+
+}
+.nav h1
+{
+    font: size 50px;
+}
+.nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: right;
+}
+nav img{
+   width: 130px;
+   float: left;
+}
+.nav-links{
+flex: 1;
+text-align: center;
+backdrop-filter: blur(20px);
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    border-color: white;
+}
+.nav-links ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-links ul li ::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;  
+      display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.nav-links ul li :hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color:#fff ;
+    position: absolute;
+    top: 50%;
+    left:5%;
+
+}
+.text-box h1{
+    font-size: 50px;
+    
+}
+.text-box p{
+    font-size: 20px;
+}
+.sp{
+    background-color: white;
+   align-content: center;
+   position: relative;
+   margin: 5%;
+   padding:10px;
+   margin-top: auto;
+   margin-left: 1%;
+   
+}
+.div slider{
+    align-items: center;
+}
+#slider{
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+}
+#slider figure{
+   position:relative;
+   width: 500%;
+   margin: 10px;
+   left:0;
+   animation: 15s slider infinite;
+}
+#slider figure img{
+    float: left;
+    width: 20%;
+    justify-content: center;
+}
+@keyframes slider{
+    0%{
+        left: 0;
+
+    }
+    20%{
+        left:0;
+    }
+    25%{
+        left:-100%
+    }
+    45%{
+        left:-100%
+    }
+    50%{
+        left:-200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left:-300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left:-400%;
+    }
+}
+#needs{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    align-items: center;
+}
+#needs img{
+    margin:25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 19%;
+    position: relative;
+    align-content: space-between;
+  
+
+}
+.container .news{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200%;
+    width: 100%;
+    align-content: center;
+     margin-left: 10px;
+    
+
+}
+.news{
+    border-width: 1px;
+    background-color: rgb(228, 222, 226);
+    font-style:italic;
+    font-weight: lighter;
+    padding: 0.2px;
+    margin: 3px;
+    height: 250px;
+    font-size:20px;
+ text-align: center;
+
+   width:100%;
+   height:100%;
+   font-weight:bold;
+   animation: news 10s infinite;
+}
+ 
+ @keyframes news {
+   0% {color: red;}
+   25%{color:yellow;}
+   50%{color:green;}
+   75%{color:brown;}
+   100% {color: red;}
+ }
+    
+.container .rn{
+    align-items: center;
+ background-color: rgb(77, 13, 238);
+ padding: 10px;
+ margin: 1PX;
+ margin-left: 10PX;
+ border-width: 10PX;
+width: 45%;
+ 
+}
     </style>
 
 
@@ -151,7 +420,7 @@
 
                 <div id="needs" >
                   <figure>
-                  <a href=""><img src="emrnum.jpg" > </a>
+                  <a href="emrgncy.html"><img src="emrnum.jpg" > </a>
                   <a href=""><img src="msg.jpg" > </a>
                   <a href=""><img src="rti.jpg" > </a>
                   <a href="cierform.html"><img src="cier.jpg" > </a>
