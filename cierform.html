@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Mobile Complaint Form - Srikakulam Police</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            padding: 0 15px;
+        min-height: 100vh;
+        justify-content: left;
+        background: #f0f2f5;
+        padding-right: 38%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lost Mobile Tracking Online Complaints</h1>
+    <h2>Online Registration Form(only for district people only)</h2>
+    <h1>SRIKAKULAM DISTRICT POLICE</h1>
+   <div class="container">
+    <form action="/submitComplaint" method="post" enctype="multipart/form-data">
+        <label for="complainantName">Complainant Name</label>
+        <input type="text" id="complainantName" name="complainantName" required>
+
+        <label for="aadharNumber">Aadhar Number</label>
+        <input type="text" id="aadharNumber" name="aadharNumber" required>
+
+        <label for="lostMobileDate">Date of Mobile Lost</label>
+        <input type="date" id="lostMobileDate" name="lostMobileDate" required>
+
+        <label for="lostMobileNumber1">Lost Mobile Number 1</label>
+        <input type="tel" id="lostMobileNumber1" name="lostMobileNumber1" required>
+
+        <label for="lostMobileNumber2">Lost Mobile Number 2 (Optional)</label>
+        <input type="tel" id="lostMobileNumber2" name="lostMobileNumber2">
+
+        <label for="altContactNumber">Alternative Contact Number</label>
+        <input type="tel" id="altContactNumber" name="altContactNumber" required>
+
+        <label for="mandalName">Mandal Name</label>
+        <select id="mandalName" name="mandalName" required>
+            <option value="">Select Mandal</option>
+            <option value="Srikakulam">Srikakulam</option>
+            <option value="Gara">Gara</option>
+            <option value="Polaki">Polaki</option>
+            <option value="Narasannapeta">narasannapeta</option>
+            <option value="Amadalavalasa">Amadalavalasa</option>
+            <option value="Sarubujjili">Sarubujjili</option>
+            <option value="Burja">Burja</option>
+            <option value="Ponduru">Ponduru</option>
+            <option value="Etcherla">Etcherla</option>
+            <option value="Laveru">Laveru</option>
+            <option value="Ranasthalam">Ranasthalam</option>
+            <option value="G Sigadam">G Sigadam</option>
+            <option value="Jalumuru">Jalumuru</option>
+            <option value="Tekkali">Tekkali</option>
+            <option value="Kota Bommali">Kota Bommali</option>
+            <option value="Santha Bommali">Santha Bommali</option>
+            <option value="Saravakota">Saravakota</option>
+            <option value="Pathapatnam">Pathapatnam</option>
+            <option value="Meliyaputti">Meliyaputti</option>
+            <option value="Hiramandalam">Hiramandalam</option>
+            <option value="Kotthuru">KOtthuru</option>
+            <option value="L N Peta">L N Peta</option>
+            <option value="Nandigam">Nandigam</option>
+            <option value="Palasa">Palasa</option>
+            <option value="Sompeta">Sompeta</option>
+            <option value="Kaviti">Kaviti</option>
+            <option value="Kanchili">Kanchili</option>
+            <option value="Ecchapuram">Ecchapuram</option>
+            <option value="Vajrapu KOtthuru">Vajrapu Kotthuru</option>
+            <option value="Mandasa">Mandasa</option>
+            <!-- Add more mandals as needed -->
+        </select>
+
+        <label for="villageName">Village Name</label>
+        <input type="text" id="villageName" name="villageName" required>
+
+        <label for="mobileCompany">Mobile Company</label>
+        <input type="text" id="mobileCompany" name="mobileCompany" required>
+
+        <label for="mobileModel">Mobile Model</label>
+        <input type="text" id="mobileModel" name="mobileModel" required>
+
+        <label for="imei1">IMEI Number 1</label>
+        <input type="text" id="imei1" name="imei1" required>
+
+        <label for="imei2">IMEI Number 2 (Optional)</label>
+        <input type="text" id="imei2" name="imei2">
+
+        <label for="briefContent">Brief Description of Incident</label>
+        <textarea id="briefContent" name="briefContent" rows="4" required></textarea>
+
+        <label for="complaintLetter">Upload Complaint Letter (PDF/Doc)</label>
+        <input type="file" id="complaintLetter" name="complaintLetter" accept=".pdf,.doc,.docx" required>
+
+        <label for="aadharProof">Upload Aadhar (PDF/Img)</label>
+        <input type="file" id="aadharProof" name="aadharProof" accept=".pdf,.jpg,.jpeg,.png" required>
+
+        <label for="imeiProof">Upload Mobile IMEI Proof (PDF/Img)</label>
+        <input type="file" id="imeiProof" name="imeiProof" accept=".pdf,.jpg,.jpeg,.png" required>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+         </div>
+<tr bgcolor="red">
+<p>Any Queries Contact:Cyber Cell,Srikakulam</p>
+</tr>
+
+</body>
+</html>
