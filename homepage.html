@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Srikakulam City Police</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <title>Srikakulam City Police</title>
+
     <style type="text/css">
       .MF{
         COLOR:RED;
@@ -22,7 +23,7 @@
       }
     
         section {
-            padding: 20px;
+            padding: 0px;
         }
         h1, h2 {
             color: #333;
@@ -31,12 +32,13 @@
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
+            position: relative;
         }
         .fact {
             background-color: white;
             border-radius: 10px;
-            padding: 15px;
-            width: 23%;
+            padding: 1px;
+            width: 20%;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
         }
@@ -50,6 +52,8 @@
             margin-top: 10px;
         }
         *{
+            margin-left: 10px;
+            margin: right 10px; ;
     margin: 0%;
     padding: 0%;   
     color: white;
@@ -100,7 +104,7 @@ h1{
 }
 .headlines{
     transition: 1s;
-    background-color: rgb(101, 120, 155);
+    background-color: rgba(56, 32, 152, 0.94);
     font-style:italic;
     font-weight: lighter;
     padding: 0.8px;
@@ -123,11 +127,11 @@ h1{
     font-size: 30px;
 }
 .header{
-    min-height: 100vh;
+    min-height: 90vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,1),rgba(4,9,30,1)),url(bg.png) ;
+    background-image:linear-gradient(rgba(44, 32, 181, 0.756),rgba(89, 85, 89, 0.784));
     background-position:center;
-    background-size:cover;
+    background-size:contain;
     position: relative;
      backdrop-filter: blur(10px);
    
@@ -258,66 +262,35 @@ backdrop-filter: blur(20px);
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 80%;
     align-items: center;
 }
 #needs img{
     margin:25px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0px;
+    margin-right: 0px;
     width: 19%;
     position: relative;
     align-content: space-between;
+    padding-left: 5px;
+
+}
+#sm{
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: 30%;
+    align-items: center;
+   padding: 20px;
   
+}
+#sm img{
+    float: inline-end;
+    width: 5%;
+    position: relative;
+    align-content: space-around 10px;
+}
 
-}
-.container .news{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 200%;
-    width: 100%;
-    align-content: center;
-     margin-left: 10px;
-    
-
-}
-.news{
-    border-width: 1px;
-    background-color: rgb(228, 222, 226);
-    font-style:italic;
-    font-weight: lighter;
-    padding: 0.2px;
-    margin: 3px;
-    height: 250px;
-    font-size:20px;
- text-align: center;
-
-   width:100%;
-   height:100%;
-   font-weight:bold;
-   animation: news 10s infinite;
-}
- 
- @keyframes news {
-   0% {color: red;}
-   25%{color:yellow;}
-   50%{color:green;}
-   75%{color:brown;}
-   100% {color: red;}
- }
-    
-.container .rn{
-    align-items: center;
- background-color: rgb(77, 13, 238);
- padding: 10px;
- margin: 1PX;
- margin-left: 10PX;
- border-width: 10PX;
-width: 45%;
- 
-}
     </style>
 
 
@@ -330,7 +303,7 @@ width: 45%;
         <ul>
            <li><a href="">HOME</a></li>
            <li><a href="aboutus.html">ABOUT US</a></li>
-           <li><a href="">KNOW YOUR POLICE STATION</a></li>
+           <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
            <li><a href="services.html">SERVICES</a></li>
            <li><a href="">NOIFICATIONS</a></li>
            <li><a href="">CONTACT</a></li>
@@ -354,8 +327,8 @@ width: 45%;
         </section>
          <br>
     
-              <div class="container"
-              <div id="slider">
+              <div class="container">
+               <div id="slider">
               <figure>
                 <img src="103.jpg">
                 <img src="102.jpg">
@@ -428,20 +401,22 @@ width: 45%;
                   </figure>
 
 
-                </div
+                </div>
 
-
+       <div id="sm">
+        <figure>
+                <a href=""><img src="youtube.png" > </a>
+                <a href=""><img src="whatsapp.png" > </a>
+                <a href=""><img src="instagram.png" > </a>
+                <a href=""><img src="facebook.png" > </a>
+                <a href=""><img src="twitter.png" > </a>
+        </figure>
+       </div>
 
                                 
-                                  <div class="sm">
-                                    <figure>
-                                      <a href=""><img src="twitter.png" width="2%" > </a>
-                                      <a href=""><img src="whatsapp.png"width="2%" > </a>
-                                      <a href="https://www.youtube.com/"><img src="youtube.png" width="2%"> </a>
-                                      <a href=""><img src="instagram.png"width="2%" > </a>
-                                      <a href=" "><img src="facebook.png" width="2%"> </a>
-                                      </figure>
-                                  </div>
+
+                                   
+                                
 
                 
          

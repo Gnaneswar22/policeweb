@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikakulam Police Department</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav {
+            background-color: #00509e;
+        }
+
+        .nav-link {
+            color: white !important;
+            padding: 14px 20px;
+            font-size: 16px;
+        }
+
+        .nav-link:hover {
+            background-color: #003366;
+        }
+        #mandal-details {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #mandal-heading {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00509e;
+        }
+        
+        #police-station-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #police-station-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        #police-station-list li:last-child {
+            border-bottom: none;
+        }
+        
+        footer {
+            background-color: #00509e;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="d-flex justify-content-between align-items-center">
+        <img src="applogo.png" alt="AP Police Logo" />
+        <h1>Srikakulam Police Department</h1>
+        <img src="sklmplc.png" alt="Srikakulam Police Logo" />
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a href="homepage.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="aboutus.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#organization" class="nav-link">Organization</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#women" class="nav-link">Women's Corner</a></li>
+                <li class="nav-item"><a href="#notifications" class="nav-link">Notifications</a></li>
+                <li class="nav-item"><a href="#info" class="nav-link">Information</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Know Your Police Station</h1>
+    <select id="mandal-select" class="form-control form-control-sm">
+      <option value="">Select Mandal</option>
+      <option value="Srikakulam">Srikakulam</option>
+      <option value="Gara">Gara</option>
+      <option value="Polaki">Polaki</option>
+      <option value="Narasannapeta">narasannapeta</option>
+      <option value="Amadalavalasa">Amadalavalasa</option>
+      <option value="Sarubujjili">Sarubujjili</option>
+      <option value="Burja">Burja</option>
+      <option value="Ponduru">Ponduru</option>
+      <option value="Etcherla">Etcherla</option>
+      <option value="Laveru">Laveru</option>
+      <option value="Ranasthalam">Ranasthalam</option>
+      <option value="G Sigadam">G Sigadam</option>
+      <option value="Jalumuru">Jalumuru</option>
+      <option value="Tekkali">Tekkali</option>
+      <option value="Kota Bommali">Kota Bommali</option>
+      <option value="Santha Bommali">Santha Bommali</option>
+      <option value="Saravakota">Saravakota</option>
+      <option value="Pathapatnam">Pathapatnam</option>
+      <option value="Meliyaputti">Meliyaputti</option>
+      <option value="Hiramandalam">Hiramandalam</option>
+      <option value="Kotthuru">KOtthuru</option>
+      <option value="L N Peta">L N Peta</option>
+      <option value="Nandigam">Nandigam</option>
+      <option value="Palasa">Palasa</option>
+      <option value="Sompeta">Sompeta</option>
+      <option value="Kaviti">Kaviti</option>
+      <option value="Kanchili">Kanchili</option>
+      <option value="Ecchapuram">Ecchapuram</option>
+      <option value="Vajrapu KOtthuru">Vajrapu Kotthuru</option>
+      <option value="Mandasa">Mandasa</option>
+    </select>
+  
+    <div id="mandal-details" class="container">
+      <h2 id="mandal-heading" class="text-center"></h2>
+      <ul id="police-station-list" class="list-group">
+        <!-- police station list will be displayed here -->
+      </ul>
+    </div>
+     <!-- Footer Section -->
+     <footer>
+        <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
+    </footer>
+
+  
+    <script>
+      // assume you have a data object with police stations for each mandal
+      const policeStationsData = {
+          "Srikakulam": [
+            "Srikakulam Town Police Station",
+            "Srikakulam Rural Police Station"
+          ],
+          "Gara": [
+            "Gara Police Station"
+          ],
+          "Polaki": [
+            "Polaki Police Station"
+          ],
+          "Narasannapeta": [
+            "Narasannapeta Police Station"
+          ],
+          "Amadalavalasa": [
+            "Amadalavalasa Police Station"
+          ],
+          "Sarubujjili": [
+            "Sarubujjili Police Station"
+          ],
+          "Burja": [
+            "Burja Police Station"
+          ],
+          "Ponduru": [
+            "Ponduru Police Station"
+          ],
+          "Etcherla": [
+            "Etcherla Police Station"
+          ],
+          "Laveru": [
+            "Laveru Police Station"
+          ],
+          "Ranasthalam": [
+            "Ranasthalam Police Station"
+          ],
+          "G Sigadam": [
+            "G Sigadam Police Station"
+          ],
+          "Jalumuru": [
+            "Jalumuru Police Station"
+          ],
+          "Tekkali": [
+            "Tekkali Police Station"
+          ],
+          "Kota Bommali": [
+            "Kotabommali Police Station"
+          ],
+          "Santha Bommali": [
+            "Santabommali Police Station"
+          ],
+          "Saravakota": [
+            "Saravakota Police Station"
+          ],
+          "Pathapatnam": [
+            "Pathapatnam Police Station"
+          ],
+          "Meliyaputti": [
+            "Meliyaputti Police Station"
+          ],
+          "Hiramandalam": [
+            "Hiramandalam Police Station"
+          ],
+          "Kotthuru": [
+            "Kotturu Police Station"
+          ],
+          "L N Peta": [
+            "L N Peta Police Station"
+          ],
+          "Nandigam": [
+            "Nandigam Police Station"
+          ],
+          "Palasa": [
+            "Palasa Police Station"
+          ],
+          "Sompeta": [
+            "Sompeta Police Station"
+          ],
+          "Kaviti": [
+            "Kaviti Police Station"
+          ],
+          "Kanchili": [
+            "Kanchili Police Station"
+          ],
+          "Ecchapuram (Ichchapuram)": [
+            "Ichchapuram Police Station"
+          ],
+          "Vajrapu Kotthuru": [
+            "Vajrapukothuru Police Station"
+          ],
+          "Mandasa": [
+            "Mandasa Police Station"
+          ]
+        };
+      // get the select element and the police station list element
+      const mandalSelect = document.getElementById("mandal-select");
+      const policeStationList = document.getElementById("police-station-list");
+  
+      // add an event listener to the select element
+      mandalSelect.addEventListener("change", function() {
+        const selectedMandal = mandalSelect.value;
+        const policeStations = policeStationsData[selectedMandal];
+  
+        // clear the police station list
+        policeStationList.innerHTML = "";
+  
+        // display the police stations for the selected mandal
+        if (policeStations) {
+          policeStations.forEach((station) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = station;
+            listItem.className = "list-group-item";
+            policeStationList.appendChild(listItem);
+          });
+        }
+      });
+    </script>
+  
+    <!-- Add Bootstrap JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

@@ -1,22 +1,26 @@
-# accounts/urls.py
+"""
+URL configuration for simpleproject project.
 
-from django.urls import path
-from .views import signup, login_view, home
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+
+# myproject/urls.py
+
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('signup/', signup, name='signup'),
-    path('login/', login_view, name='login'),
-    path('home/', home, name='home'),
-]
-
-# accounts/urls.py
-
-from django.urls import path
-from .views import signup, login_view, home, logout_view
-
-urlpatterns = [
-    path('signup/', signup, name='signup'),
-    path('login/', login_view, name='login'),
-    path('home/', home, name='home'),
-    path('logout/', logout_view, name='logout'),  # Add this line
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
 ]
