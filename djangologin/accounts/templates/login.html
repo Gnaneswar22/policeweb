@@ -4,15 +4,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+<title>Login</title>
+<style>
+    .head{
+        margin: 10px;
+       padding: 20px;
+        background-color: cornflowerblue ;
+    }
+    .log{
+        padding: 5%;
+        background-color: rgb(242, 241, 246);
+        align-content: center;
+        width: 20%;
+        border-radius: 25px;
+        justify-content: center;
+        margin-left: 35%;
+        margin-top: 10%;
+        border-color: black;
+    }
+</style>
 </head>
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-    <p>Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
+<div class="log">
+<h2 class="head">Login</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+<p>Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
+</div>
 </body>
 </html>
