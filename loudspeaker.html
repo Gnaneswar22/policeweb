@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikakulam Police Department - Loudspeaker Permission Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color:white;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Srikakulam Police Department</h1>
+    <p>Loudspeaker Permission Request</p>
+</header>
+
+<div class="container">
+    <form id="permissionForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" name="contact" required>
+
+        <label for="event">Event Description:</label>
+        <textarea id="event" name="event" rows="4" required></textarea>
+
+        <label for="date">Date of Event:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time of Event:</label>
+        <input type="time" id="time" name="time" required>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('permissionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Your request has been submitted successfully.');
+        // Here, you can add code to handle the form submission, like sending the data to a server.
+    });
+</script>
+
+</body>
+</html>

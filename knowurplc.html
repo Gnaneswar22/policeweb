@@ -28,18 +28,21 @@
 
         nav {
             background-color: #00509e;
+            width: 100%;
         }
 
         .nav-link {
             color: white !important;
             padding: 14px 20px;
             font-size: 16px;
+            
         }
 
         .nav-link:hover {
             background-color: #003366;
         }
         #mandal-details {
+          width: 50%;
             margin-top: 20px;
             padding: 20px;
             background-color: #fff;
@@ -53,12 +56,14 @@
             font-size: 24px;
             font-weight: bold;
             color: #00509e;
+            
         }
         
         #police-station-list {
             list-style: none;
             padding: 0;
             margin: 0;
+          
         }
         
         #police-station-list li {
@@ -68,6 +73,12 @@
         
         #police-station-list li:last-child {
             border-bottom: none;
+        }
+        .form-control{
+          width: 50%;
+          align-content: center;
+          justify-content: center;
+          padding-left: 20px;
         }
         
         footer {
@@ -105,7 +116,7 @@
     </nav>
 
     <h1>Know Your Police Station</h1>
-    <select id="mandal-select" class="form-control form-control-sm">
+    <select id="mandal-select" class="form-control">
       <option value="">Select Mandal</option>
       <option value="Srikakulam">Srikakulam</option>
       <option value="Gara">Gara</option>
