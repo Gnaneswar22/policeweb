@@ -53,3 +53,4 @@ if (!empty($username) && !empty($password) && !empty($email)) {
 } else {
     echo "All fields are required";
 }
+?>
