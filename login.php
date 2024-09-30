@@ -29,7 +29,7 @@ if (!empty($username) && !empty($password)) {
             $stmt->fetch();
             $_SESSION['id'] = $id; // Store user ID in session
             $_SESSION['username'] = $username; // Store username in session
-            header("Location: homepage.html"); // Redirect to homepage
+            header("Location: home.html"); // Redirect to homepage
             exit();
         } else {
             echo "Invalid username or password";
