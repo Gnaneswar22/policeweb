@@ -1,10 +1,10 @@
 <?php
 session_start(); // Start a session to store user data
 
-$username = $_POST['first'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
-if (!empty($username) && !empty($password)) {
+if (!empty($email) && !empty($password)) {
     // Database connection details (same as in your registration script)
     $host = "localhost";
     $username = "root";
@@ -16,20 +16,20 @@ if (!empty($username) && !empty($password)) {
     if (mysqli_connect_error()) {
         die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
-        $SELECT = "SELECT id, username, password FROM users WHERE username = ? AND password = ?";
+        $SELECT = "SELECT id, email, password FROM users WHERE email = ? AND password = ?";
 
         $stmt = $conn->prepare($SELECT);
-        $stmt->bind_param("ss", $username, $password);
+        $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
-        $stmt->bind_result($id, $username, $password);
+        $stmt->bind_result($id, $email, $password);
         $stmt->store_result();
         $rnum = $stmt->num_rows;
 
         if ($rnum == 1) {
             $stmt->fetch();
             $_SESSION['id'] = $id; // Store user ID in session
-            $_SESSION['username'] = $username; // Store username in session
-            header("Location: home.html"); // Redirect to homepage
+            $_SESSION['email'] = $email; // Store username in session
+            header("Location: homepage1.html"); // Redirect to homepage
             exit();
         } else {
             echo "Invalid username or password";

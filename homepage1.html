@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <title>Srikakulam City Police</title>
+
+    <style type="text/css">
+      .MF{
+        COLOR:RED;
+        
+      }
+      .police{
+        color: white;
+      }
+      .skm{
+         float: right;
+      }
+      .sm{
+        float: right;
+      }
+    
+        section {
+            padding: 0px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .facts {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            position: relative;
+        }
+        .fact {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1px;
+            width: 20%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .fact img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .fact p {
+            margin-top: 10px;
+        }
+        *{
+            margin-left: 10px;
+            margin: right 10px; ;
+    margin: 0%;
+    padding: 0%;   
+    color: white;
+    
+}
+h1{
+    text-align: left;
+    text-decoration: solid;
+    font-size: 50px;
+
+    
+}
+.headlines{
+    transition: 1s;
+    background-color: rgba(56, 32, 152, 0.94);
+    font-style:italic;
+    font-weight: lighter;
+    padding: 0.8px;
+    margin: 20px;
+    height: 40px;
+    font-size:25px;
+
+    
+}
+.sklm{
+    color:rgba(209, 36, 36, 0.87);
+     text-align: left;
+    text-decoration: solid;
+    font-size: 50px;
+
+
+}
+.sk{
+    color:white;
+    font-size: 30px;
+}
+.header{
+    min-height: 90vh;
+    width: 100%;
+    background-image:linear-gradient(rgba(44, 32, 181, 0.756),rgba(89, 85, 89, 0.784));
+    background-position:center;
+    background-size:contain;
+    position: relative;
+     backdrop-filter: blur(10px);
+   
+
+}
+.nav h1
+{
+    font: size 50px;
+}
+.nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: right;
+}
+nav img{
+   width: 130px;
+   float: left;
+}
+.nav-links{
+flex: 1;
+text-align: center;
+backdrop-filter: blur(20px);
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    border-color: white;
+}
+.nav-links ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-links ul li ::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;  
+      display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.nav-links ul li :hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color:#fff ;
+    position: absolute;
+    top: 50%;
+    left:5%;
+
+}
+.text-box h1{
+    font-size: 50px;
+    
+}
+.text-box p{
+    font-size: 20px;
+}
+.sp{
+    background-color: white;
+   align-content: center;
+   position: relative;
+   margin: 5%;
+   padding:10px;
+   margin-top: auto;
+   margin-left: 1%;
+   
+}
+.div slider{
+    align-items: center;
+}
+#slider{
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+}
+#slider figure{
+   position:relative;
+   width: 500%;
+   margin: 10px;
+   left:0;
+   animation: 15s slider infinite;
+}
+#slider figure img{
+    float: left;
+    width: 20%;
+    justify-content: center;
+}
+@keyframes slider{
+    0%{
+        left: 0;
+
+    }
+    20%{
+        left:0;
+    }
+    25%{
+        left:-100%
+    }
+    45%{
+        left:-100%
+    }
+    50%{
+        left:-200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left:-300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left:-400%;
+    }
+}
+#needs{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    align-items: center;
+}
+#needs img{
+    margin:25px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 19%;
+    position: relative;
+    align-content: space-between;
+    padding-left: 5px;
+
+}
+#sm{
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: 30%;
+    align-items: center;
+   padding: 20px;
+  
+}
+#sm img{
+    float: inline-end;
+    width: 5%;
+    position: relative;
+    align-content: space-around 10px;
+}
+
+    </style>
+
+
+   <section class="header">
+    <nav>
+      <a href="homepage.html" ><img  class="skm" src="applogo.png" ></a>
+        <a href="homepage.html" ><img src="sklmplc.png" id="img1"></a><br>
+        <h1 class="sklm">SRIKAKULAM</h1> <h1 class="police">POLICE</h1><hr>
+        <div class="nav-links">
+        <ul>
+           <li><a href="">HOME</a></li>
+           <li><a href="aboutus.html">ABOUT US</a></li>
+           <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
+           <li><a href="services.html">SERVICES</a></li>
+           <li><a href="">NOIFICATIONS</a></li>
+           <li><a href="">CONTACT</a></li>
+        </ul>
+        </div>
+        
+      </nav><hr>
+      <marquee class="headlines"> <h4>RECENT ACTIVITY.</h4> </marquee> <br>
+      <div class="text-box">
+     <h1 class="sk">SRIKAKULAM </h1><h1 class="sk">POLICE</h1>
+      <p class="p1">Srikakulam Police welcomes you to our official website. We hope the information provided within this site will be a valuable resource to citizens.<br> We are dedicated to serve our people and make Srikakulam Police Commissionerate area a safer place to dwell, work, visit, transit or conduct business.<br>
+
+         "Your Safety, Our Concern" is something we feel from the bottom of our hearts and which we will try to fulfil in the execution of our duties.</p>
+      
+      
+        </div >
+             
+        
+     
+        </section>
+         <br>
+    
+              <div class="container">
+               <div id="slider">
+              <figure>
+                <img src="103.jpg">
+                <img src="102.jpg">
+                <img src="93.jpg">
+                <img src="106.jpg">
+                <img src="103.jpg">
+              </figure>
+            </div>
+            </div>
+              
+                 
+                   <br><hr>
+                   <header>
+                   
+                </header>
+                
+                <section>
+                    <h2 CLASS="MF" >Major Concerns in the Region</h2>
+                    <div class="facts">
+                        <div class="fact">
+                            <img src="women_trafficking.jpg" alt="Women Trafficking">
+                            <p>Stop Women Trafficking: Protect vulnerable lives.</p>
+                        </div>
+                        <div class="fact">
+                            <img src="drugs.jpg" alt="Drugs">
+                            <p>Say No to Drugs: Keep our community safe and drug-free.</p>
+                        </div>
+                        <div class="fact">
+                            <img src="dont_drink_and_drive.jpg" alt="Don't Drink and Drive">
+                            <p>Don't Drink and Drive: Stay responsible, save lives.</p>
+                        </div>
+                        <div class="fact">
+                            <img src="safety.jpg" alt="Safety">
+                            <p>Prioritize Safety: Follow rules for a safer society.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <script>
+                    const images = [
+                        "women_trafficking.jpg", 
+                        "drugs.jpg", 
+                        "dont_drink_and_drive.jpg", 
+                        "safety.jpg"
+                    ];
+                
+                    const facts = document.querySelectorAll('.fact img');
+                    
+                    let index = 0;
+                
+                    function changeImages() {
+                        facts.forEach((fact, i) => {
+                            fact.src = images[(index + i) % images.length];
+                        });
+                        index = (index + 1) % images.length;
+                    }
+                
+                    setInterval(changeImages, 1000); // Change images every 3 seconds
+                </script>
+
+                 <hr>
+
+                <div id="needs" >
+                  <figure>
+                  <a href="emrgncy.html"><img src="emrnum.jpg" > </a>
+                  <a href=""><img src="msg.jpg" > </a>
+                  <a href=""><img src="rti.jpg" > </a>
+                  <a href="cierform.html"><img src="cier.jpg" > </a>
+                  <a href=""><img src="recute.jpg" > </a>
+                  </figure>
+
+
+                </div>
+
+       <div id="sm">
+        <figure>
+                <a href=""><img src="youtube.png" > </a>
+                <a href=""><img src="whatsapp.png" > </a>
+                <a href="https://www.instagram.com/sklmpolice?igsh=c21ucnA5aXdoNmRw"><img src="instagram.png" > </a>
+                <a href=""><img src="facebook.png" > </a>
+                <a href=""><img src="twitter.png" > </a>
+        </figure>
+       </div>
+
+                                
+
+                                   
+                                
+
+                
+         
+</body>
+</html>
