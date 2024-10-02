@@ -58,7 +58,7 @@
 </header>
 
 <div class="container">
-    <form id="permissionForm" action="" method="POST">
+    <form id="permissionForm" action="loudspeaker.php" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -74,7 +74,7 @@
         <label for="time">Time of Event:</label>
         <input type="time" id="time" name="time" required>
 
-        <button type="submit">Submit Request</button>
+        <button type="submit" value="submit">Submit</button>
     </form>
 </div>
 
@@ -83,6 +83,36 @@
         event.preventDefault();
         alert('Your request has been submitted successfully.');
         // Here, you can add code to handle the form submission, like sending the data to a server.
+        document.getElementById('permissionForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Your request has been submitted successfully.');
+
+    // Get the form data
+    var formData = new FormData(event.target);
+
+    // Create an XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
+
+    // Set the request method and URL
+    xhr.open('POST', 'loudspeakeer.php', true);
+
+    // Set the content type header
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+    // Send the form data
+    xhr.send(formData);
+
+    // Handle the response
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            console.log(xhr.responseText);
+            // Handle the successful response from the server
+        } else {
+            console.error('Error:', xhr.statusText);
+            // Handle the error response from the server
+        }
+    };
+});
     });
 </script>
 
