@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003366;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav {
+            background-color: #00509e;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            background-color: #003366;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+
+
+        footer {
+            background-color: #00509e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .gallery {
+            --s: 250px;
+            /* control the size */
+            --g: 10px;
+            /* control the gap */
+            --f: 3.0;
+            /* control the scale factor */
+
+            display: grid;
+            gap: var(--g);
+            width: calc(3*var(--s) + 2*var(--g));
+            aspect-ratio: 1;
+            grid-template-columns: repeat(3, auto);
+        }
+
+        .gallery>img {
+            width: 0;
+            height: 0;
+            min-height: 100%;
+            min-width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            filter: grayscale(80%);
+            transition: .35s linear;
+        }
+
+        .gallery img:hover {
+            filter: grayscale(0);
+            width: calc(var(--s)*var(--f));
+            height: calc(var(--s)*var(--f));
+        }
+
+
+        .gallery-main {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .modal-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .prev-button {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .next-button {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="ap_police_logo.png" alt="AP Police Logo" />
+        <h1>Srikakulam Police Department</h1>
+        <img src="srikakulam_police_logo.png" alt="Srikakulam Police Logo" />
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#organization">Organization</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#women">Women's Corner</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#info">Information</a></li>
+        </ul>
+    </nav>
+    <!--gallery section-->
+    <section class="heading">
+        <h2>Gallery</h2>
+    </section>
+    <section class="gallery-main">
+        <div class="gallery">
+            <img src="90.jpg" alt="#">
+            <img src="91.jpg" alt="#">
+            <img src="92.jpg" alt="#">
+            <img src="93.jpg" alt="#">
+            <img src="94.jpg" alt="#">
+            <img src="96.jpg" alt="#">
+            <img src="97.jpg" alt="#">
+            <img src="99.jpg" alt="#">
+            <img src="100.jpg" alt="#">
+            <img src="101.jpg" alt="#">
+            <img src="102.jpg" alt="#">
+            <img src="103.jpg" alt="#">
+            <img src="104.jpg" alt="#">
+            <img src="105.jpg" alt="#">
+            <img src="106.jpg" alt="#">
+            <img src="107.jpg" alt="#">
+            <img src="108.jpg" alt="#">
+            <img src="109.jpg" alt="#">
+            <img src="110.jpg" alt="#">
+            <img src="112.jpg" alt="#">
+            <img src="113.jpg" alt="#">
+            <img src="114.jpg" alt="#">
+            <img src="115.jpg" alt="#">
+        </div>
+    </section>
+    <!-- Footer Section--->
+    <footer>
+        <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
+    </footer>
+    <script>// Get all images in the gallery
+        const images = document.querySelectorAll('.gallery img');
+
+        // Create a modal window
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        // Create a close button for the modal window
+        const closeButton = document.createElement('button');
+        closeButton.classList.add('close-button');
+        closeButton.textContent = 'Close';
+
+        // Create navigation buttons for the modal window
+        const prevButton = document.createElement('button');
+        prevButton.classList.add('prev-button');
+        prevButton.textContent = 'Prev';
+
+        const nextButton = document.createElement('button');
+        nextButton.classList.add('next-button');
+        nextButton.textContent = 'Next';
+
+        // Create an image element for the modal window
+        const modalImage = document.createElement('img');
+        modalImage.classList.add('modal-image');
+
+        // Add the close button, navigation buttons, and image element to the modal window
+        modal.appendChild(closeButton);
+        modal.appendChild(prevButton);
+        modal.appendChild(nextButton);
+        modal.appendChild(modalImage);
+
+        // Add the modal window to the body
+        document.body.appendChild(modal);
+
+        // Initialize the current image index
+        let currentImageIndex = 0;
+
+        // Function to open the modal window with the clicked image
+        function openModal(event) {
+            // Get the clicked image
+            const clickedImage = event.target;
+
+            // Set the current image index
+            currentImageIndex = Array.prototype.indexOf.call(images, clickedImage);
+
+            // Set the modal image source to the clicked image source
+            modalImage.src = clickedImage.src;
+
+            // Show the modal window
+            modal.style.display = 'block';
+        }
+
+        // Function to close the modal window
+        function closeModal() {
+            // Hide the modal window
+            modal.style.display = 'none';
+        }
+
+        // Function to navigate to the previous image
+        function prevImage() {
+            // Decrement the current image index
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+
+            // Set the modal image source to the previous image source
+            modalImage.src = images[currentImageIndex].src;
+        }
+
+        // Function to navigate to the next image
+        function nextImage() {
+            // Increment the current image index
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            // Set the modal image source to the next image source
+            modalImage.src = images[currentImageIndex].src;
+        }
+
+        // Add event listeners to the images to open the modal window
+        images.forEach((image) => {
+            image.addEventListener('click', openModal);
+        });
+
+        // Add event listeners to the close button and navigation buttons
+        closeButton.addEventListener('click', closeModal);
+        prevButton.addEventListener('click', prevImage);
+        nextButton.addEventListener('click', nextImage);
+
+        // Add an event listener to the modal window to close it when clicked outside
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
