@@ -8,8 +8,8 @@
     <title>Srikakulam City Police</title>
 
     <style type="text/css">
-      
-        .MF{
+     
+    .MF{
         COLOR:RED;
         text-align: center;
 
@@ -163,6 +163,7 @@ margin-top: 8px;
 }
 .div slider{
     align-items: center;
+    
    
 }
 #slider{
@@ -219,10 +220,9 @@ margin-top: 8px;
 }
 #needs{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    align-items: center;
+    padding-left: 18%;
+    width: 70%;
+   justify-content: center;
 }
 #needs img{
     margin:25px;
@@ -231,14 +231,14 @@ margin-top: 8px;
     width: 19%;
     position: relative;
     align-content: space-between;
-    padding-left: 5px;
+    padding-left: 18px;
 
 }
 #sm{
     display:flex;
-    margin-left: auto;
-    margin-right:auto;
-   padding-left: 38%;
+    align-items: center;
+   padding-left: 32%;
+   
 
   
 }
@@ -246,7 +246,7 @@ margin-top: 8px;
     width: 3%;
     position: relative;
     justify-content: center;
-  padding: 19px;
+    padding: 19px;
 }
 
 footer {
@@ -330,6 +330,60 @@ footer p{
     color: #5b08f5;
     padding: 10px;
  }
+ @media (max-width: 678px){
+    .container1{
+        grid-template-columns: 50px 50px 50px 1fr 50px 50px 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "banner"
+        "left-aside"
+        "main"
+        "right-aside"
+        "low-content"
+        "footer";
+    }
+
+ }
+ You've shared the HTML code for the Srikakulam City Police website.
+
+To make this website responsive, I'll provide some suggestions:
+
+- Use a responsive framework: Consider using popular frameworks like Bootstrap or Tailwind CSS to simplify the process.
+- Media Queries: Add media queries to your CSS to adapt layouts for different screen sizes.
+- Flexible Grid: Use CSS Grid or Flexbox for flexible and adaptable layouts.
+- Image Optimization: Compress images to reduce page load times.
+- Mobile-First Design: Design for smaller screens first and then adapt for larger screens.
+
+Here's an example of how you can modify your HTML and CSS to make it responsive:
+
+HTML:
+
+
+
+
+
+
+
+/* Add media queries for different screen sizes */
+@media only screen and (max-width: 768px) {
+    /* Styles for tablets and mobile devices */
+}
+
+@media only screen and (max-width: 480px) {
+    /* Styles for mobile devices */
+}
+
+/* Use flexible grid or flexbox for layouts */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+Would you like more specific guidance or code examples?
     </style>
 
 
@@ -346,7 +400,7 @@ footer p{
            <li><a href="services.html">SERVICES</a></li>
            <li><a href="">NOTIFICATIONS</a></li>
            <li><a href="">CONTACT</a></li>
-           <li><a href="login.html">LOGIN</a></li>
+           
         </ul>
         </div>
         
@@ -548,7 +602,7 @@ footer p{
                   <a href=""><img src="msg.jpg" > </a>
                   <a href=""><img src="rti.jpg" > </a>
                   <a href="cierform.html"><img src="cier.jpg" > </a>
-                  <a href=""><img src="recute.jpg" > </a>
+                  
                   </figure>
 
 
@@ -572,7 +626,7 @@ footer p{
         <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
     </footer>                   
 
-                                   
+                               
                                 
 
                 
