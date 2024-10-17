@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikakulam Police Department</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f8f9fa;
+        text-align: center;
+    }
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+    h1, h2 {
+        margin: 0;
+    }
+    
+    section {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+        width: 50%;
+        padding: 50px;;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border: radius 10px;;
+    }
+    
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.9em;
+        background-color: #117cee;
+    }
+</style>    
+</head>
+<body>
+    <header>
+        <h1>Srikakulam Police Department</h1>
+        <p>Message to Srikakulam Police</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; SRI SIVANI COLLEGE OF ENGINEERING</p>
+    </footer>
+</body>
+</html>
