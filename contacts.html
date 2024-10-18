@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikakulam Police Department Contacts</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #003366;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    header img {
+        height: 60px;
+    }
+
+    nav {
+        background-color: #00509e;
+        padding: 10px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            background-color: #003366;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        #map_canvas {width: 100%;height: 500px;border: 2px solid #3872ac;position: relative;}
+        .markerLoader {width: 100px;position: absolute;top: 50%;left: 50%;margin-left: -50px;margin-top: -50px;}
+        .markerLoader img {width: 100%;}
+        .googleMarkerOptions{ width: 500px; float: right; margin-bottom: 15px; }
+        .googleMarkerOptions > form{ display: flex; align-items: center;}
+        .googleMarkerOptions select{ height: auto; padding: 6px 10px; margin: 0 5px; border-radius: 4px;}
+        .googleMarkerOptions select.radius{ width:auto; }
+        .googleMarkerOptions #utility_type{ width: 100%; margin-left: 0;}
+        .googleMarkerOptions > form .btn{ border-radius: 4px; margin-right: 0;}
+        .googleMarkerOptions > form .btn:focus{ outline: none;}
+        .googleMarkerOptions > form .nearby-img{ width: 40px; margin-right: 10px;}
+        .googleMapMarker{ display: inline-block; width: 100%;}
+        body.contrast .googleMapMarkerInfoHOlder {background: #000;padding: 8px 14px 54px;}
+        .googleMapMarkerLocationList {margin-top: 25px;}
+        .googleMapMarkerLocationList ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 0;
+            word-break: break-word;
+        }
+        .googleMapMarkerLocationList li {
+            list-style: none;
+            padding: 12px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+        }
+        /*
+                .googleMapMarkerLocationList li:nth-child(7n-2), .googleMapMarkerLocationList li:nth-child(7n-1), .googleMapMarkerLocationList li:nth-child(7n){grid-column: span 4;}
+        */
+        @media screen and (max-width: 1199px){
+            .googleMapMarkerLocationList ul{grid-template-columns: repeat(3, 1fr);}
+        }
+        @media screen and (max-width: 992px){
+            .googleMapMarkerLocationList ul{grid-template-columns: repeat(2, 1fr);}
+        }
+        @media screen and (max-width: 575px){
+            .googleMapMarkerLocationList ul{grid-template-columns: repeat(1, 1fr);}
+        }
+        @media screen and (max-width: 640px){
+            .googleMarkerOptions{ width: 100%;}
+            .googleMarkerOptions > form{ display:block; text-align:center;}
+            .googleMarkerOptions #utility_type{ width:100%;}
+            .googleMarkerOptions > form .nearby-img{ display:none;}
+            .googleMarkerOptions select.radius{ margin: 10px 0;}
+            .googleMarkerOptions > form .btn{ font-size:1.1em;}
+        }
+    
+            #topBar #accessibility ul li .goiSearch, #topBar1 #accessibility ul li .goiSearch{ visibility: visible;}
+            #topBar #accessibility ul li .socialIcons ul, #topBar1 #accessibility ul li .socialIcons ul { background: #fff !important;}
+            #topBar #accessibility ul li .goiSearch, #topBar1 #accessibility ul li .goiSearch{ right: 0; left: inherit;}
+            .nav li a:focus > ul { left: 0; opacity: 0.99;}
+            a:focus, button:focus, .carasoleflex-wrap .flexslider .slides > li a:focus, .flexslider .slides>li a:focus
+            { outline: 3px solid #ff8c00 !important;}
+            .flexslider .slides>li { display:block;}
+            .nav li.active > a, .nav li > a:hover, .nav li > a:focus, .nav ul li a:hover,
+            .mva7-thc-activetheme-district-theme-13 .nav li:hover > a, .mva7-thc-activetheme-district-theme-13 .nav li.active > a, .home-13 .nav li:hover > a, .home-13 .nav li.active > a{color:#ffffff;}
+            .nav li:hover > a{ border-top:none; color:#ffffff;}
+            .nav li.active > a{ border:0;}
+            .nav ul{ opacity:1; left:0; position:static !important; width:auto; border:0;}
+            .nav li{ position:static !important; display:block; float:none; border:0 !important;}
+            .nav li>a { float:none; display:block; background-color:rgba(146,38,4,0.75) !important; color:#ffffff; margin:0; padding:12px 20px !important; border-radius:0; border-bottom:1px solid #ffffff !important; position:static !important; border-top:0; font-size:14px !important;}
+            .nav ul.sub-menu li >a{ background-color:rgba(146,38,4,1); font-size:12px !important;}
+            ul li .socialIcons{ visibility:visible !important;}
+            .mva7-thc-activetheme-district-theme .nav li > a,
+            .mva7-thc-activetheme-district-theme .nav li.active > a{ background-color:#9e6b22 !important;}
+            .mva7-thc-activetheme-district-theme .nav ul.sub-menu li >a{ background-color:#f3b45b !important;}
+
+            .mva7-thc-activetheme-district-theme-2 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-6 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-7 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-8 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-9 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-10 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-11 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-13 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-14 .menuWrapper,
+            .mva7-thc-activetheme-district-theme-15 .menuWrapper{ background-color:#ffffff;}
+
+            .mva7-thc-activetheme-district-theme-2 .nav li > a,
+            .mva7-thc-activetheme-district-theme-2 .nav li.active > a{ background-color:rgba(63,77,184,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-2 .nav ul.sub-menu li >a{ background-color:rgba(63,77,184,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-3 .nav li > a,
+            .mva7-thc-activetheme-district-theme-3 .nav li.active > a,
+            .mva7-thc-activetheme-district-theme-5 .nav li > a,
+            .mva7-thc-activetheme-district-theme-5 .nav li.active > a{ background-color:rgba(212,60,60,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-3 .nav ul.sub-menu li >a,
+            .mva7-thc-activetheme-district-theme-5 .nav ul.sub-menu li >a{ background-color:rgba(212,60,60,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-4 .nav li > a,
+            .mva7-thc-activetheme-district-theme-4 .nav li.active > a{ background-color:rgba(184,48,88,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-4 .nav ul.sub-menu li >a{ background-color:rgba(184,48,88,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-6 .nav li > a,
+            .mva7-thc-activetheme-district-theme-6 .nav li.active > a{ background-color:rgba(16,91,122,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-6 .nav ul.sub-menu li >a{ background-color:rgba(16,91,122,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-7 .nav li > a,
+            .mva7-thc-activetheme-district-theme-7 .nav li.active > a{ background-color:rgba(2,20,80,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-7 .nav ul.sub-menu li >a{ background-color:rgba(2,20,80,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-8 .nav li > a,
+            .mva7-thc-activetheme-district-theme-8 .nav li.active > a{ background-color:rgba(0,144,145,0.65) !important;}
+            .mva7-thc-activetheme-district-theme-8 .nav ul.sub-menu li >a{ background-color:rgba(0,144,145,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-9 .nav li > a,
+            .mva7-thc-activetheme-district-theme-9 .nav li.active > a{ background-color:rgba(60,125,20,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-9 .nav ul.sub-menu li >a{ background-color:rgba(60,125,20,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-10 .nav li > a,
+            .mva7-thc-activetheme-district-theme-10 .nav li.active > a{ background-color:rgba(233,13,65,0.70) !important;}
+            .mva7-thc-activetheme-district-theme-10 .nav ul.sub-menu li >a{ background-color:rgba(233,13,65,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-11 .nav li > a,
+            .mva7-thc-activetheme-district-theme-11 .nav li.active > a{ background-color:rgba(104,57,127,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-11 .nav ul.sub-menu li >a{ background-color:rgba(104,57,127,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-13 .nav li > a,
+            .mva7-thc-activetheme-district-theme-13 .nav li.active > a{ background-color:rgba(0,0,0,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-13 .nav ul.sub-menu li >a{ background-color:rgba(0,0,0,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-14 .nav li > a,
+            .mva7-thc-activetheme-district-theme-14 .nav li.active > a{ background-color:rgba(0,120,175,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-14 .nav ul.sub-menu li >a{ background-color:rgba(0,120,175,1) !important;}
+
+            .mva7-thc-activetheme-district-theme-15 .nav li > a,
+            .mva7-thc-activetheme-district-theme-15 .nav li.active > a{ background-color:rgba(150,86,104,0.75) !important;}
+            .mva7-thc-activetheme-district-theme-15 .nav ul.sub-menu li >a{ background-color:rgba(150,86,104,1) !important;}y
+
+           
+
+
+
+
+
+
+
+
+        </style>
+
+
+<body>
+    <header>
+        <img src="applogo.png" alt="AP Police Logo" />
+        <h1>Srikakulam Police Department</h1>
+        <img src="sklmplc.png" alt="Srikakulam Police Logo" />
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="womens.html">Women's Corner</a></li>
+        </ul>
+    </nav>
+
+                  
+            <h1>CONTACTS</h1>
+		<table border="130">
+            <div id="SkipContent">
+            <div class="row">
+              <div class="col-12">
+                          
+<h2>List of Phone Numbers of Srikakulam District Police</h2>
+<thead>
+<tr>
+<th scope="col">Designation</th>
+<th scope="col">New Cell Numbers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SP SKL</td>
+<td>6309990800</td>
+</tr>
+<tr>
+<td>CC TO SP</td>
+<td>6309990901</td>
+</tr>
+<tr>
+<td>Addl. SP (Admn.)</td>
+<td>6309990801</td>
+</tr>
+<tr>
+<td>Addl. SP (CRIMES)</td>
+<td>6309990803</td>
+</tr>
+<tr>
+<td>CC TO Addl. SP</td>
+<td>6309990902</td>
+</tr>
+<tr>
+<td>DSP TRAFFIC</td>
+<td>6309990809</td>
+</tr>
+<tr>
+<td>DSP DSB</td>
+<td>6309990807</td>
+</tr>
+<tr>
+<td>A.O. DPO</td>
+<td>6309990900</td>
+</tr>
+<tr>
+<td>A. Superintendent</td>
+<td>6309990903</td>
+</tr>
+<tr>
+<td>B.Superintendent</td>
+<td>6309990904</td>
+</tr>
+<tr>
+<td>P. Superintendent</td>
+<td>6309990905</td>
+</tr>
+<tr>
+<td>DPO STORE Supdt.</td>
+<td>6309990906</td>
+</tr>
+<tr>
+<td>Duty Office, DAR Etcherla</td>
+<td>6309990937</td>
+</tr>
+<tr>
+<td>DSP DAR</td>
+<td>6309990813</td>
+</tr>
+<tr>
+<td>R.I., ADMN.</td>
+<td>6309990838</td>
+</tr>
+<tr>
+<td>M.T.O., RI</td>
+<td>6309990841</td>
+</tr>
+<tr>
+<td>I.C. Communication</td>
+<td>9440627602</td>
+</tr>
+<tr>
+<td>SDPO SRIKAKULAM</td>
+<td>6309990804</td>
+</tr>
+<tr>
+<td>CI SRIKAKULAM RURAL</td>
+<td>6309990814</td>
+</tr>
+<tr>
+<td>S.I. SKL I Tn.</td>
+<td>6309990842</td>
+</tr>
+<tr>
+<td>SI (2) SKL I TN.</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>S.I. SKL Rural</td>
+<td>6309990845</td>
+</tr>
+<tr>
+<td>S.I. Gara</td>
+<td>6309990846</td>
+</tr>
+<tr>
+<td>CI SKL 2 TOWN PS</td>
+<td>6309990824</td>
+</tr>
+<tr>
+<td>S.I (1) SKL II Tn.</td>
+<td>6309990843</td>
+</tr>
+<tr>
+<td>S.I (2) SKL II Tn.</td>
+<td>6309990844</td>
+</tr>
+<tr>
+<td>DSP WOMEN PS</td>
+<td>6309990810</td>
+</tr>
+<tr>
+<td>CI J.R, PURAM</td>
+<td>6309990816</td>
+</tr>
+<tr>
+<td>S.I. J.R.Puram</td>
+<td>6309990850</td>
+</tr>
+<tr>
+<td>S.I. Ponduru</td>
+<td>6309990852</td>
+</tr>
+<tr>
+<td>S.I. Laveru</td>
+<td>6309990851</td>
+</tr>
+<tr>
+<td>S.I. Etcherla</td>
+<td>6309990853</td>
+</tr>
+<tr>
+<td>CI NARASANNAPETA</td>
+<td>6309990815</td>
+</tr>
+<tr>
+<td>S.I. N.Peta</td>
+<td>6309990847</td>
+</tr>
+<tr>
+<td>S.I. Jalumuru</td>
+<td>6309990848</td>
+</tr>
+<tr>
+<td>S.I. Polaki</td>
+<td>6309990849</td>
+</tr>
+<tr>
+<td>CI AMADALAVALASA</td>
+<td>6309990823</td>
+</tr>
+<tr>
+<td>S.I. Amadalavalasa</td>
+<td>6309990854</td>
+</tr>
+<tr>
+<td>S.I. Burja</td>
+<td>6309990855</td>
+</tr>
+<tr>
+<td>S.I. Sarubujjili</td>
+<td>6309990856</td>
+</tr>
+<tr>
+<td>SDPO KASIBUGGA</td>
+<td>6309990805</td>
+</tr>
+<tr>
+<td>CI KASIBUGGA PS</td>
+<td>6309990825</td>
+</tr>
+<tr>
+<td>C.I. KSB (RURAL)</td>
+<td>6309990818</td>
+</tr>
+<tr>
+<td>S.I. Kasibugga</td>
+<td>6309990857</td>
+</tr>
+<tr>
+<td>S.I. – II KASIBUGGA</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>S.I. V .Kothuru</td>
+<td>6309990858</td>
+</tr>
+<tr>
+<td>S.I. Nandigam</td>
+<td>6309990859</td>
+</tr>
+<tr>
+<td>CI TEKKALI</td>
+<td>6309990817</td>
+</tr>
+<tr>
+<td>S.I. Tekkali</td>
+<td>6309990860</td>
+</tr>
+<tr>
+<td>S.I-2. Tekkali</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>S.I. Kotabommali</td>
+<td>6309990861</td>
+</tr>
+<tr>
+<td>S.I. Nowpada</td>
+<td>6309990862</td>
+</tr>
+<tr>
+<td>S.I. Santhabommali</td>
+<td>6309990863</td>
+</tr>
+<tr>
+<td>CI SOMPETA</td>
+<td>6309990819</td>
+</tr>
+<tr>
+<td>S.I. Sompeta</td>
+<td>6309990864</td>
+</tr>
+<tr>
+<td>S.I. Mandasa</td>
+<td>6309990865</td>
+</tr>
+<tr>
+<td>S.I. Baruva</td>
+<td>6309990867</td>
+</tr>
+<tr>
+<td>S.I. Kanchili</td>
+<td>6309990866</td>
+</tr>
+<tr>
+<td>CI ICHAPURAM</td>
+<td>6309990827</td>
+</tr>
+<tr>
+<td>S.I. ITCHAPURAM  T</td>
+<td>6309990868</td>
+</tr>
+<tr>
+<td>S.I. ITCHHAPURAM (R)</td>
+<td>6309990869</td>
+</tr>
+<tr>
+<td>S.I. Kaviti</td>
+<td>6309990870</td>
+</tr>
+<tr>
+<td>SDPO PALAKONDA</td>
+<td>6309990806</td>
+</tr>
+<tr>
+<td>CI PALAKONDA</td>
+<td>6309990820</td>
+</tr>
+<tr>
+<td>S.I. Palakonda</td>
+<td>6309990871</td>
+</tr>
+<tr>
+<td>S.I. Veeraghattam</td>
+<td>6309990873</td>
+</tr>
+<tr>
+<td>S.I. R.A.Valasa</td>
+<td>6309990872</td>
+</tr>
+<tr>
+<td>CI RAJAM RURAL</td>
+<td>6309990821</td>
+</tr>
+<tr>
+<td>CI RAJAM PS</td>
+<td>6309990826</td>
+</tr>
+<tr>
+<td>S.I. (1)  RAJAM</td>
+<td>6309990874</td>
+</tr>
+<tr>
+<td>S.I. Santhakaviti</td>
+<td>6309990875</td>
+</tr>
+<tr>
+<td>S.I. G.Sigadam</td>
+<td>6309990877</td>
+</tr>
+<tr>
+<td>S.I. Vangara</td>
+<td>6309990876</td>
+</tr>
+<tr>
+<td>CI KOTHURU</td>
+<td>6309990828</td>
+</tr>
+<tr>
+<td>S.I. Kothuru</td>
+<td>6309990882</td>
+</tr>
+<tr>
+<td>S.I. Seethampeta</td>
+<td>6309990883</td>
+</tr>
+<tr>
+<td>S.I. Bathili</td>
+<td>6309990884</td>
+</tr>
+<tr>
+<td>S.I. Donubai</td>
+<td>6309990885</td>
+</tr>
+<tr>
+<td>CI PATHAPATNAM</td>
+<td>6309990822</td>
+</tr>
+<tr>
+<td>S.I. Pathapatnam</td>
+<td>6309990878</td>
+</tr>
+<tr>
+<td>S.I. Saravakota</td>
+<td>6309990879</td>
+</tr>
+<tr>
+<td>S.I. Meliaputty</td>
+<td>6309990881</td>
+</tr>
+<tr>
+<td>S.I. Hiramandalam</td>
+<td>6309990880</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body>
+</html>
