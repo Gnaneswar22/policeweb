@@ -1,54 +1,47 @@
-/* Header Styles */
+/* Header Section */
 .header {
-    background-color: #fefefe; /* Dark header background */
-    color: #2f415c;
-    padding: 20px;
-    padding-bottom: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 5px solid  #2f415c;; /* Color divider for separation */
-
+    justify-content: space-between; /* Aligns the logos to the edges */
+    align-items: center; /* Vertically centers content */
+    background-color: #2f415c; /* Background color for the header */
+    padding: 10px 20px; /* Add some padding for spacing */
 }
 
-
-.aplogo{
-    height: 128px; /* Adjust size of logos */
-    float: right;
-    
-
-}
-.header #sklmlogo {
-    height: 128px; /* Adjust size of logos */
-    
+/* Left Logo */
+#sklmlogo {
+    width: 120px; /* Adjust the size of the logo as needed */
+    height: auto;
 }
 
-.header .titles {
-    display: flex;
-    flex-direction: column;
-   padding-right: 72%;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 40px;
-    font-weight: bold;
-  
+/* Titles in the center */
+.titles {
+    text-align: left;
+    padding-right:%;
 }
 
 .sklm {
-    color:#2f415c ; /* Light blue for "Srikakulam" */
- 
+    font-size: 50px;
+    color: white;
+    margin: 0;
 }
 
 .police {
-    color: #f44336;; /* Bright pink for "Police" */
+    font-size: 40px;
+    color: rgb(249, 0, 0);
+    margin: 0;
 }
+
+/* Right Logo */
+.aplogo {
+    width: 100px; /* Adjust the size of the logo as needed */
+    height: auto;
+}
+
 
 /* Navigation Bar Styles */
 .navbar {
     background-color: #2f415c; /* Different background color for navbar */
-    padding: 15px 0;
+    padding: 12px 0;
     text-align: center;
 }
 
@@ -57,6 +50,7 @@
 flex: 1;
 text-align: center;
 backdrop-filter: blur(20px);
+margin-top: 0;
 }
 .navbar ul li{
     list-style: none;
@@ -86,11 +80,11 @@ backdrop-filter: blur(20px);
 .headlines {
     background-color: #2f415c;
     color: #00adb5;
-    padding: 10px;
+    padding: 14px;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -191,19 +185,17 @@ justify-content: center;
 }
 }
 #needs{
-display: block;
-padding-left: 18%;
-width: 70%;
-justify-content: center;
+display: flex;
+background-color: #afc2c3;
+align-items: center;
+padding-left:25%;
 }
 #needs img{
-margin:25px;
-margin-left: 0px;
-margin-right: 0px;
-width: 19%;
+width: 10%;
 position: relative;
-align-content: space-between;
-padding-left: 18px;
+place-items: center;
+justify-content: center;
+padding: 18px;
 
 }
 #sm{
