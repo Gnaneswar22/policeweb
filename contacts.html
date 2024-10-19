@@ -58,144 +58,7 @@
             padding: 20px;
         }
 
-        #map_canvas {width: 100%;height: 500px;border: 2px solid #3872ac;position: relative;}
-        .markerLoader {width: 100px;position: absolute;top: 50%;left: 50%;margin-left: -50px;margin-top: -50px;}
-        .markerLoader img {width: 100%;}
-        .googleMarkerOptions{ width: 500px; float: right; margin-bottom: 15px; }
-        .googleMarkerOptions > form{ display: flex; align-items: center;}
-        .googleMarkerOptions select{ height: auto; padding: 6px 10px; margin: 0 5px; border-radius: 4px;}
-        .googleMarkerOptions select.radius{ width:auto; }
-        .googleMarkerOptions #utility_type{ width: 100%; margin-left: 0;}
-        .googleMarkerOptions > form .btn{ border-radius: 4px; margin-right: 0;}
-        .googleMarkerOptions > form .btn:focus{ outline: none;}
-        .googleMarkerOptions > form .nearby-img{ width: 40px; margin-right: 10px;}
-        .googleMapMarker{ display: inline-block; width: 100%;}
-        body.contrast .googleMapMarkerInfoHOlder {background: #000;padding: 8px 14px 54px;}
-        .googleMapMarkerLocationList {margin-top: 25px;}
-        .googleMapMarkerLocationList ul {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 20px;
-            padding: 0;
-            word-break: break-word;
-        }
-        .googleMapMarkerLocationList li {
-            list-style: none;
-            padding: 12px;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-        }
-        /*
-                .googleMapMarkerLocationList li:nth-child(7n-2), .googleMapMarkerLocationList li:nth-child(7n-1), .googleMapMarkerLocationList li:nth-child(7n){grid-column: span 4;}
-        */
-        @media screen and (max-width: 1199px){
-            .googleMapMarkerLocationList ul{grid-template-columns: repeat(3, 1fr);}
-        }
-        @media screen and (max-width: 992px){
-            .googleMapMarkerLocationList ul{grid-template-columns: repeat(2, 1fr);}
-        }
-        @media screen and (max-width: 575px){
-            .googleMapMarkerLocationList ul{grid-template-columns: repeat(1, 1fr);}
-        }
-        @media screen and (max-width: 640px){
-            .googleMarkerOptions{ width: 100%;}
-            .googleMarkerOptions > form{ display:block; text-align:center;}
-            .googleMarkerOptions #utility_type{ width:100%;}
-            .googleMarkerOptions > form .nearby-img{ display:none;}
-            .googleMarkerOptions select.radius{ margin: 10px 0;}
-            .googleMarkerOptions > form .btn{ font-size:1.1em;}
-        }
-    
-            #topBar #accessibility ul li .goiSearch, #topBar1 #accessibility ul li .goiSearch{ visibility: visible;}
-            #topBar #accessibility ul li .socialIcons ul, #topBar1 #accessibility ul li .socialIcons ul { background: #fff !important;}
-            #topBar #accessibility ul li .goiSearch, #topBar1 #accessibility ul li .goiSearch{ right: 0; left: inherit;}
-            .nav li a:focus > ul { left: 0; opacity: 0.99;}
-            a:focus, button:focus, .carasoleflex-wrap .flexslider .slides > li a:focus, .flexslider .slides>li a:focus
-            { outline: 3px solid #ff8c00 !important;}
-            .flexslider .slides>li { display:block;}
-            .nav li.active > a, .nav li > a:hover, .nav li > a:focus, .nav ul li a:hover,
-            .mva7-thc-activetheme-district-theme-13 .nav li:hover > a, .mva7-thc-activetheme-district-theme-13 .nav li.active > a, .home-13 .nav li:hover > a, .home-13 .nav li.active > a{color:#ffffff;}
-            .nav li:hover > a{ border-top:none; color:#ffffff;}
-            .nav li.active > a{ border:0;}
-            .nav ul{ opacity:1; left:0; position:static !important; width:auto; border:0;}
-            .nav li{ position:static !important; display:block; float:none; border:0 !important;}
-            .nav li>a { float:none; display:block; background-color:rgba(146,38,4,0.75) !important; color:#ffffff; margin:0; padding:12px 20px !important; border-radius:0; border-bottom:1px solid #ffffff !important; position:static !important; border-top:0; font-size:14px !important;}
-            .nav ul.sub-menu li >a{ background-color:rgba(146,38,4,1); font-size:12px !important;}
-            ul li .socialIcons{ visibility:visible !important;}
-            .mva7-thc-activetheme-district-theme .nav li > a,
-            .mva7-thc-activetheme-district-theme .nav li.active > a{ background-color:#9e6b22 !important;}
-            .mva7-thc-activetheme-district-theme .nav ul.sub-menu li >a{ background-color:#f3b45b !important;}
-
-            .mva7-thc-activetheme-district-theme-2 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-6 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-7 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-8 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-9 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-10 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-11 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-13 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-14 .menuWrapper,
-            .mva7-thc-activetheme-district-theme-15 .menuWrapper{ background-color:#ffffff;}
-
-            .mva7-thc-activetheme-district-theme-2 .nav li > a,
-            .mva7-thc-activetheme-district-theme-2 .nav li.active > a{ background-color:rgba(63,77,184,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-2 .nav ul.sub-menu li >a{ background-color:rgba(63,77,184,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-3 .nav li > a,
-            .mva7-thc-activetheme-district-theme-3 .nav li.active > a,
-            .mva7-thc-activetheme-district-theme-5 .nav li > a,
-            .mva7-thc-activetheme-district-theme-5 .nav li.active > a{ background-color:rgba(212,60,60,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-3 .nav ul.sub-menu li >a,
-            .mva7-thc-activetheme-district-theme-5 .nav ul.sub-menu li >a{ background-color:rgba(212,60,60,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-4 .nav li > a,
-            .mva7-thc-activetheme-district-theme-4 .nav li.active > a{ background-color:rgba(184,48,88,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-4 .nav ul.sub-menu li >a{ background-color:rgba(184,48,88,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-6 .nav li > a,
-            .mva7-thc-activetheme-district-theme-6 .nav li.active > a{ background-color:rgba(16,91,122,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-6 .nav ul.sub-menu li >a{ background-color:rgba(16,91,122,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-7 .nav li > a,
-            .mva7-thc-activetheme-district-theme-7 .nav li.active > a{ background-color:rgba(2,20,80,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-7 .nav ul.sub-menu li >a{ background-color:rgba(2,20,80,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-8 .nav li > a,
-            .mva7-thc-activetheme-district-theme-8 .nav li.active > a{ background-color:rgba(0,144,145,0.65) !important;}
-            .mva7-thc-activetheme-district-theme-8 .nav ul.sub-menu li >a{ background-color:rgba(0,144,145,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-9 .nav li > a,
-            .mva7-thc-activetheme-district-theme-9 .nav li.active > a{ background-color:rgba(60,125,20,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-9 .nav ul.sub-menu li >a{ background-color:rgba(60,125,20,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-10 .nav li > a,
-            .mva7-thc-activetheme-district-theme-10 .nav li.active > a{ background-color:rgba(233,13,65,0.70) !important;}
-            .mva7-thc-activetheme-district-theme-10 .nav ul.sub-menu li >a{ background-color:rgba(233,13,65,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-11 .nav li > a,
-            .mva7-thc-activetheme-district-theme-11 .nav li.active > a{ background-color:rgba(104,57,127,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-11 .nav ul.sub-menu li >a{ background-color:rgba(104,57,127,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-13 .nav li > a,
-            .mva7-thc-activetheme-district-theme-13 .nav li.active > a{ background-color:rgba(0,0,0,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-13 .nav ul.sub-menu li >a{ background-color:rgba(0,0,0,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-14 .nav li > a,
-            .mva7-thc-activetheme-district-theme-14 .nav li.active > a{ background-color:rgba(0,120,175,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-14 .nav ul.sub-menu li >a{ background-color:rgba(0,120,175,1) !important;}
-
-            .mva7-thc-activetheme-district-theme-15 .nav li > a,
-            .mva7-thc-activetheme-district-theme-15 .nav li.active > a{ background-color:rgba(150,86,104,0.75) !important;}
-            .mva7-thc-activetheme-district-theme-15 .nav ul.sub-menu li >a{ background-color:rgba(150,86,104,1) !important;}y
-
-           
-
-
-
-
-
-
-
-
+       
         </style>
 
 
@@ -217,7 +80,7 @@
 
                   
             <h1>CONTACTS</h1>
-		<table border="130">
+		<table border="250">
             <div id="SkipContent">
             <div class="row">
               <div class="col-12">

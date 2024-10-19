@@ -1,119 +1,163 @@
-*{
-    margin: 0%;
-    padding: 0%;   
+
+.MF{
+    COLOR:RED;
+    text-align: center;
+
+  }
+  .police{
     color: white;
-    .poppins-thin {
-        font-family: "Poppins", sans-serif;
-        font-weight: 100;
-        font-style: normal;
-      }
-      
-      .poppins-extralight {
-        font-family: "Poppins", sans-serif;
-        font-weight: 200;
-        font-style: normal;
-      }
-      
-      .poppins-light {
-        font-family: "Poppins", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-      }
-      
-      .poppins-regular {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      
-      .poppins-semibold {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-style: normal;
-      }
-      
-      .poppins-bold {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-      }
-      
+  }
+  .skm{
+     float: right;
+  }
+  .sm{
+    float: right;
+  }
 
+    section {
+        padding: 0px;
+    }
+    h1, h2 {
+        color: #333;
+    }
+    .facts {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        position: relative;
+    }
+    .fact {
+        background-color: white;
+        border-radius: 10px;
+        padding: 1px;
+        width: 20%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .fact img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .fact p {
+        margin-top: 10px;
+    }
+    *{
+        
+        margin: 0%;
+        padding: 0%;   
+        color: white;
+        
 }
-h1{
-    text-align: left;
-    text-decoration: solid;
-    font-size: 50px;
 
-    
-}
 .headlines{
-    transition: 1s;
-    background-color: rgb(101, 120, 155);
-    font-style:italic;
-    font-weight: lighter;
-    padding: 0.8px;
-    margin: 20px;
-    height: 40px;
-    font-size:25px;
+transition: 1s;
 
-    
+font-style:italic;
+font-weight: lighter;
+padding: 0.8px;
+margin: 10px;
+height: 25px;
+font-size:25px;
+border: #fff;
+
+
 }
 .sklm{
-    color:rgba(209, 36, 36, 0.87);
-     text-align: left;
-    text-decoration: solid;
-    font-size: 50px;
+color:rgb(245, 243, 248);
+text-align: center;
+text-decoration: solid;
+font-size: 50px;
+
+
+
+}
+.police{
+text-align: center;
+text-decoration: solid;
+font-size: 50px;
 
 
 }
 .sk{
-    color:white;
-    font-size: 30px;
+color:white;
+font-size: 30px;
 }
-.header{
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,1),rgba(4,9,30,1)),url(bg.png) ;
-    background-position:center;
-    background-size:cover;
-    position: relative;
-     backdrop-filter: blur(10px);
-   
+/* Header Styles */
+.header {
+    background-color: #fefefe; /* Dark header background */
+    color: #2f415c;
+    padding: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid  #2f415c;; /* Color divider for separation */
 
 }
-.nav h1
-{
-    font: size 50px;
+
+
+.aplogo{
+    height: 128px; /* Adjust size of logos */
+    float: right;
+    
+
 }
-.nav{
+.header #sklmlogo {
+    height: 128px; /* Adjust size of logos */
+    
+}
+
+.header .titles {
     display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: right;
+    flex-direction: column;
+   padding-right: 72%;
 }
-nav img{
-   width: 130px;
-   float: left;
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+  
 }
-.nav-links{
+
+.sklm {
+    color:#2f415c ; /* Light blue for "Srikakulam" */
+ 
+}
+
+.police {
+    color: #f44336;; /* Bright pink for "Police" */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #2f415c;
+    background-color: ; /* Different background color for navbar */
+    padding: 15px 0;
+    text-align: center;
+}
+
+
+.navbar{
 flex: 1;
 text-align: center;
 backdrop-filter: blur(20px);
 }
-.nav-links ul li{
+.navbar ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
     border-color: white;
 }
-.nav-links ul li a{
+.navbar ul li a{
     color:white;
     text-decoration: none;
     font-size: 20px;
 }
-.nav-links ul li ::after{
+.navbar ul li ::after{
     content:'';
     width: 0%;
     height: 2px;
@@ -122,148 +166,249 @@ backdrop-filter: blur(20px);
     margin: auto;
     transition: 0.3s;
 }
-.nav-links ul li :hover::after{
-    width: 100%;
+.navbar ul li :hover::after{
+    width:100%;
+}
+/* Marquee for Recent Activity */
+.headlines {
+    background-color: #2f415c;
+    color: #00adb5;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 .text-box{
-    width: 90%;
-    color:#fff ;
-    position: absolute;
+    padding-top: 10px;
+    color:#2f415c;
+    position: relative;
     top: 50%;
-    left:5%;
-
+   background-color: #2f415c ;
+    padding-top: 10px;
+    text-align: left;
+    height: 280px;
 }
-.text-box h1{
-    font-size: 50px;
-    
+.text-box h1 {
+  padding-top: 15px;
+    display: flex;
+    font-size: 30px;
+    padding-left: 50px;
+  
+}
+.text-box .skl , .skm{
+ 
+    font-size: 40px;
+    color: white;
 }
 .text-box p{
-    font-size: 20px;
+    padding-top: 15px;
+    font-size: 21px;
+    padding-left: 50px;
+}
+.p2{
+    padding-top: 30px;
 }
 .sp{
-    background-color: white;
-   align-content: center;
-   position: relative;
-   margin: 5%;
-   padding:10px;
-   margin-top: auto;
-   margin-left: 1%;
-   
+
+align-content: center;
+position: relative;
+
+
 }
 .div slider{
-    align-items: center;
+align-items: center;
+
+
 }
 #slider{
-    overflow: hidden;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+overflow: hidden;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 78%;
+
 
 }
 #slider figure{
-   position:relative;
-   width: 500%;
-   margin: 10px;
-   left:0;
-   animation: 15s slider infinite;
+position:relative;
+width: 500%;
+margin: 10px;
+left:0;
+animation: 15s slider infinite;
+
 }
 #slider figure img{
-    float: left;
-    width: 20%;
-    justify-content: center;
+float: left;
+width: 20%;
+justify-content: center;
 }
 @keyframes slider{
-    0%{
-        left: 0;
+0%{
+    left: 0;
 
-    }
-    20%{
-        left:0;
-    }
-    25%{
-        left:-100%
-    }
-    45%{
-        left:-100%
-    }
-    50%{
-        left:-200%;
-    }
-    70%{
-        left: -200%;
-    }
-    75%{
-        left:-300%;
-    }
-    95%{
-        left: -300%;
-    }
-    100%{
-        left:-400%;
-    }
+}
+20%{
+    left:0;
+}
+25%{
+    left:-100%
+}
+45%{
+    left:-100%
+}
+50%{
+    left:-200%;
+}
+70%{
+    left: -200%;
+}
+75%{
+    left:-300%;
+}
+95%{
+    left: -300%;
+}
+100%{
+    left:-400%;
+}
 }
 #needs{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    align-items: center;
+display: block;
+padding-left: 18%;
+width: 70%;
+justify-content: center;
 }
 #needs img{
-    margin:25px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 19%;
-    position: relative;
-    align-content: space-between;
-  
+margin:25px;
+margin-left: 0px;
+margin-right: 0px;
+width: 19%;
+position: relative;
+align-content: space-between;
+padding-left: 18px;
 
 }
-.container .news{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 200%;
-    width: 100%;
-    align-content: center;
-     margin-left: 10px;
-    
+#sm{
+display:flex;
+align-items: center;
+padding-left: 32%;
+
+
 
 }
-.news{
-    border-width: 1px;
-    background-color: rgb(228, 222, 226);
-    font-style:italic;
-    font-weight: lighter;
-    padding: 0.2px;
-    margin: 3px;
-    height: 250px;
-    font-size:20px;
- text-align: center;
+#sm img{
+width: 3%;
+position: relative;
+justify-content: center;
+padding: 19px;
+}
 
-   width:100%;
-   height:100%;
-   font-weight:bold;
-   animation: news 10s infinite;
+footer {
+background-color: #00509e;
+color: white;
+text-align: center;
+height: 10%;
+position: absolute;
+width: 100%;
 }
- 
- @keyframes news {
-   0% {color: red;}
-   25%{color:yellow;}
-   50%{color:green;}
-   75%{color:brown;}
-   100% {color: red;}
- }
-    
-.container .rn{
-    align-items: center;
- background-color: rgb(77, 13, 238);
- padding: 10px;
- margin: 1PX;
- margin-left: 10PX;
- border-width: 10PX;
-width: 45%;
- 
+
+footer p{
+padding-top: 15px;
 }
+.main{
+background-color: #fff;
+}
+
+
+@-webkit-keyframes color-change {
+0% { color: red; }
+/*25%{ color:green;}*/
+50% { color: blue; }
+/*75% { color:yellow;}*/
+100% { color: red; }
+}
+@-moz-keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+@-ms-keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+@-o-keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+@keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+.news 				{ 
+padding: 20px; /*border-bottom: 2px dashed #20619f;*/ 
+}
+.news h2 			{
+
+text-transform: uppercase;
+}
+.news marquee		{
+ max-height:200px;}
+.news p a 			{
+ color:inherit;font-size: 16px !important;
+}
+.news p 			{
+display:block;font-family: 'Roboto', sans-serif; font-size:16px; font-weight:600;width:100%; text-align: justify; 
+                 -webkit-animation: color-change 1s infinite;
+                 -moz-animation: color-change 1s infinite;
+                    -o-animation: color-change 1s infinite;
+                    -ms-animation: color-change 1s infinite;
+                 animation: color-change 1s infinite;
+                    }
+
+
+.newsbar{
+width: 98.5%;
+background-color: rgb(224, 222, 228);
+align-items: center;
+box-sizing: border-box;
+margin: 10px;
+
+}
+.newsbar .news marquee{
+height: 300px;
+}
+.newsbar .news h2{
+color: #5b08f5;
+padding: 10px;
+}
+
+
+
+
+
+/* Add media queries for different screen sizes */
+@media only screen and (max-width: 768px) {
+/* Styles for tablets and mobile devices */
+}
+
+@media only screen and (max-width: 480px) {
+/* Styles for mobile devices */
+}
+
+/* Use flexible grid or flexbox for layouts */
+.container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+
+
+
