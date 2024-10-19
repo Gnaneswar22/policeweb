@@ -74,10 +74,9 @@ font-size: 50px;
 
 }
 .police{
-text-align: center;
+text-align: left;
 text-decoration: solid;
 font-size: 50px;
-
 
 }
 .sk{
@@ -133,8 +132,7 @@ font-size: 30px;
 
 /* Navigation Bar Styles */
 .navbar {
-    background-color: #2f415c;
-    background-color: ; /* Different background color for navbar */
+    background-color: #2f415c; /* Different background color for navbar */
     padding: 15px 0;
     text-align: center;
 }
