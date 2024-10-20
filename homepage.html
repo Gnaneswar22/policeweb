@@ -7,412 +7,58 @@
    
     <title>Srikakulam City Police</title>
 
-    <style type="text/css">
-     
-    .MF{
-        COLOR:RED;
-        text-align: center;
+<link rel="stylesheet" href="homestyle.css">     
+<style>
 
-      }
-      .police{
-        color: white;
-      }
-      .skm{
-         float: right;
-      }
-      .sm{
-        float: right;
-      }
+</style>
+</head>
+<body>
+    <header class="header">
     
-        section {
-            padding: 0px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        .facts {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            position: relative;
-        }
-        .fact {
-            background-color: white;
-            border-radius: 10px;
-            padding: 1px;
-            width: 20%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .fact img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .fact p {
-            margin-top: 10px;
-        }
-        *{
-            
-            margin: 0%;
-            padding: 0%;   
-            color: white;
-            
-}
+    <a href="homepage.html"><img src="sklmplc.png" id="sklmlogo" alt="City Logo"></a>
+    <div class="titles">
+        <h1 class="sklm">SRIKAKULAM</h1>
+        <h1 class="police">POLICE</h1>
+    </div>
+    <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
+</header>
+<br>
 
-.headlines{
-    transition: 1s;
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <ul>
+        <li><a href="">HOME</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="organisation.html">ORGANISATION CHART</a></li>
+        <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
+        <li><a href="womens.html">WOMEN'S CORNER</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="contacts.html">CONTACT</a></li>
    
-    font-style:italic;
-    font-weight: lighter;
-    padding: 0.8px;
-    margin: 10px;
-    height: 25px;
-    font-size:25px;
-    border: #fff;
+    </ul>
+</nav>
 
-    
-}
-.sklm{
-    color:rgb(245, 243, 248);
-  text-align: center;
-    text-decoration: solid;
-    font-size: 50px;
-  
+<marquee class="headlines">RECENT ACTIVITY.</marquee>
 
-
-}
-.police{
-    text-align: center;
-    text-decoration: solid;
-    font-size: 50px;
-
-    
-}
-.sk{
-    color:white;
-    font-size: 30px;
-}
-.header{
-    min-height: ;
-    width: 100%;
-    background-color: rgb(8, 38, 92);
-    background-position:center;
-}
-.nav h1
-{
-    font: size 50px;
-}
-.nav{
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    margin-left: 20px;
-
-}
-nav img{
-   width: 130px;
-   float: left;
-}
-.nav-links{
-flex: 1;
-
-width: 70%;
-background-color: rgb(3, 9, 69);
-border-radius: 5px;
-margin-left: 15%;
-margin-top: 8px;
-
-}
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-    
-  
-  
-    
-}
-.nav-links ul li a{
-    color:white;
-    text-decoration: none;
-    font-size: 20px;
-    text-align: right;
-}
-.nav-links ul li ::after{
-    content:'';
-    width: 0%;
-    height: 2px;
-    background: #f6f5f5;  
-      display: block;
-    margin: auto;
-    transition: 0.3s;
-}
-.nav-links ul li :hover::after{
-    width: 100%;
-}
-
-.sp{
-   
-   align-content: center;
-   position: relative;
-  
-   
-}
-.div slider{
-    align-items: center;
-    
-   
-}
-#slider{
-    overflow: hidden;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 78%;
-    
-
-}
-#slider figure{
-   position:relative;
-   width: 500%;
-   margin: 10px;
-   left:0;
-   animation: 15s slider infinite;
-   
-}
-#slider figure img{
-    float: left;
-    width: 20%;
-    justify-content: center;
-}
-@keyframes slider{
-    0%{
-        left: 0;
-
-    }
-    20%{
-        left:0;
-    }
-    25%{
-        left:-100%
-    }
-    45%{
-        left:-100%
-    }
-    50%{
-        left:-200%;
-    }
-    70%{
-        left: -200%;
-    }
-    75%{
-        left:-300%;
-    }
-    95%{
-        left: -300%;
-    }
-    100%{
-        left:-400%;
-    }
-}
-#needs{
-    display: block;
-    padding-left: 18%;
-    width: 70%;
-   justify-content: center;
-}
-#needs img{
-    margin:25px;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 19%;
-    position: relative;
-    align-content: space-between;
-    padding-left: 18px;
-
-}
-#sm{
-    display:flex;
-    align-items: center;
-   padding-left: 32%;
-   
-
-  
-}
-#sm img{
-    width: 3%;
-    position: relative;
-    justify-content: center;
-    padding: 19px;
-}
-
-footer {
-    background-color: #00509e;
-    color: white;
-    text-align: center;
-    height: 10%;
-    position: absolute;
-    width: 100%;
-}
-
-footer p{
-    padding-top: 15px;
-}
- .main{
-   background-color: #fff;
- }
-
-
- @-webkit-keyframes color-change {
-    0% { color: red; }
-    /*25%{ color:green;}*/
-    50% { color: blue; }
-    /*75% { color:yellow;}*/
-    100% { color: red; }
-}
-@-moz-keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-@-ms-keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-@-o-keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-@keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
- .news 				{ 
-    padding: 20px; /*border-bottom: 2px dashed #20619f;*/ 
-}
-.news h2 			{
-    
-    text-transform: uppercase;
-}
-.news marquee		{
-     max-height:200px;}
-.news p a 			{
-     color:inherit;font-size: 16px !important;
-    }
-.news p 			{
-    display:block;font-family: 'Roboto', sans-serif; font-size:16px; font-weight:600;width:100%; text-align: justify; 
-        			 -webkit-animation: color-change 1s infinite;
-        			 -moz-animation: color-change 1s infinite;
-       				 -o-animation: color-change 1s infinite;
-       				 -ms-animation: color-change 1s infinite;
-        			 animation: color-change 1s infinite;
-   					 }
-
-
- .newsbar{
-    width: 98.5%;
-    background-color: rgb(224, 222, 228);
-    align-items: center;
-    box-sizing: border-box;
-    margin: 10px;
-   
- }
- .newsbar .news marquee{
-   height: 300px;
- }
- .newsbar .news h2{
-    color: #5b08f5;
-    padding: 10px;
- }
- @media (max-width: 678px){
-    .container1{
-        grid-template-columns: 50px 50px 50px 1fr 50px 50px 50px;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "header"
-        "banner"
-        "left-aside"
-        "main"
-        "right-aside"
-        "low-content"
-        "footer";
-    }
-
- }
- You've shared the HTML code for the Srikakulam City Police website.
-
-To make this website responsive, I'll provide some suggestions:
-
-- Use a responsive framework: Consider using popular frameworks like Bootstrap or Tailwind CSS to simplify the process.
-- Media Queries: Add media queries to your CSS to adapt layouts for different screen sizes.
-- Flexible Grid: Use CSS Grid or Flexbox for flexible and adaptable layouts.
-- Image Optimization: Compress images to reduce page load times.
-- Mobile-First Design: Design for smaller screens first and then adapt for larger screens.
-
-Here's an example of how you can modify your HTML and CSS to make it responsive:
-
-HTML:
-
-
-
-
-
-
-
-/* Add media queries for different screen sizes */
-@media only screen and (max-width: 768px) {
-    /* Styles for tablets and mobile devices */
-}
-
-@media only screen and (max-width: 480px) {
-    /* Styles for mobile devices */
-}
-
-/* Use flexible grid or flexbox for layouts */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-
-Would you like more specific guidance or code examples?
-    </style>
-
-
-   <section class="header">
-    <nav>
-      <a href="homepage.html" ><img  class="skm" src="applogo.png" ></a>
-        <a href="homepage.html" ><img src="sklmplc.png" id="img1"></a><br>
-        <h1 class="sklm">SRIKAKULAM</h1> <h1 class="police">POLICE</h1><hr>
-        <div class="nav-links">
-        <ul>
-           <li><a href="">HOME</a></li>
-           <li><a href="aboutus.html">ABOUT US</a></li>
-           <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
-           <li><a href="womens.html">WOMENS CORNER</a></li>
-           <li><a href="services.html">SERVICES</a></li>
-           <li><a href="contacts.html">CONTACT</a></li>
-           <li><a href="login.html">LOGIN</a></li>
-        </ul>
-        </div>
-        
-      </nav>
-      <marquee class="headlines"> <h4>RECENT ACTIVITY.</h4> </marquee> <br>
-     
+     <br>
              
         </section> <br>
            
 
 
+
         <div class="text-box">
+            <div>
+                <h1 class="skl">SRIKAKULAM</h1>
+                <h1 class="sk">POLICE</h1>
+                <p>Srikakulam Police welcomes you to our official website. We hope the information provided within this site will be a valuable resource to citizens.<br>
+                We are dedicated to serving our people and making Srikakulam Police Commissionerate a safer place to live, work, visit, transit, or conduct business.</p>
+                <p class="p2">"Your Safety, Our Concern" is something we feel deeply, and we will strive to fulfill this in our duties.</p>
+            </div>
+            <img src="sklmmap.jpeg" alt="Srikakulam Police Map">
+        </div>
+        
+                   
     
               <div class="container">
                <div id="slider">
@@ -576,25 +222,16 @@ Would you like more specific guidance or code examples?
 
                 <div id="needs" >
                   <figure>
-                  <a href="emrgncy.html"><img src="emrnum.jpg" > </a>
-                  <a href="message.html"><img src="msg.jpg" > </a>
-                  <a href="rti.pdf"><img src="rti.jpg" > </a>
-                  <a href="cierform.html"><img src="cier.jpg" > </a>
+                  <a href="emrgncy.html"><img src="emrnum.png" > </a>
+                  <a href="message.html"><img src="msg.png" > </a>
+                  <a href="rti.pdf"><img src="rti.png" > </a>
+                  <a href="https://ceir.sancharsaathi.gov.in/Request/CeirUserBlockRequestDirect.jsp"><img src="ceir.png" > </a>
                   
                   </figure>
 
 
                 </div>
 
-       <div id="sm">
-        <figure>
-                <a href=""><img src="youtube.png" > </a>
-                <a href="https://wa.me/<6309990947>"><img src="whatsapp.png" > </a>
-                <a href="https://www.instagram.com/sklmpolice?igsh=c21ucnA5aXdoNmRw"><img src="instagram.png" > </a>
-                <a href=""><img src="facebook.png" > </a>
-                <a href="https://x.com/POLICESRIKAKULM?t=SDm9-xyQf3c1JD60OCmUvg&s=09"><img src="twitter.png" > </a>
-        </figure>
-       </div>
    
 
 </div>
@@ -603,7 +240,47 @@ Would you like more specific guidance or code examples?
        <footer>
         <p>&copy; SRI SIVANI COLLEGE OF ENGINEERING. All Rights Reserved.</p>
     </footer>                   
-
+    <footer class="footer">
+        <div class="footer-container">
+    
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="knowurplc.html">Know Your Police Station</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="">Notifications</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>Address: Srikakulam Police Department, Srikakulam, AP</p>
+                <p>Email: <a href="mailto:info@sklmpolice.com">info@sklmpolice.com</a></p>
+                <p>Phone: <a href="tel:+91-1234567890">+91-1234567890</a></p>
+            </div>
+    
+            <!-- Social Media Icons -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://www.twitter.com"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/sklmpolice?igsh=c21ucnA5aXdoNmRw"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="https://www.youtube.com"><img src="youtube.png" alt="YouTube"></a>
+                    <a href="https://www.whatsapp.com"><img src="whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
+        </div>
+    </footer>
                                
                                 
 
