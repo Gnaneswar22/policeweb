@@ -6,8 +6,12 @@
     padding:0;
     margin: 0;
   size: 0;
-  width: auto;    
-    height: auto;
+  width: 90%;    
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 88%;
+   
    }
    /* Header Section */
     .header {
