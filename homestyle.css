@@ -1,0 +1,411 @@
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between; /* Aligns the logos to the edges */
+    align-items: center; /* Vertically centers content */
+    background-color: #2f415c; /* Background color for the header */
+    padding: 10px 20px; /* Add some padding for spacing */
+}
+
+/* Left Logo */
+#sklmlogo {
+    width: 120px; /* Adjust the size of the logo as needed */
+    height: auto;
+}
+
+/* Titles in the center */
+.titles {
+    text-align: left;
+    padding-right:%;
+}
+
+.sklm {
+    font-size: 50px;
+    color: white;
+    margin: 0;
+}
+
+.police {
+    font-size: 40px;
+    color: rgb(249, 0, 0);
+    margin: 0;
+}
+
+/* Right Logo */
+.aplogo {
+    width: 100px; /* Adjust the size of the logo as needed */
+    height: auto;
+}
+
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #2f415c; /* Different background color for navbar */
+    padding: 12px 0;
+    text-align: center;
+}
+
+
+.navbar{
+flex: 1;
+text-align: center;
+backdrop-filter: blur(20px);
+margin-top: 0;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 8px;
+    position: relative;
+    border-color: white;
+}
+.navbar ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.navbar ul li ::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;  
+      display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.navbar ul li :hover::after{
+    width:100%;
+}
+/* Marquee for Recent Activity */
+.headlines {
+    background-color: #2f415c;
+    color: #00adb5;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: 1s;
+}
+.text-box{
+    padding-top: 10px;
+    color:#2f415c;
+    position: relative;
+    top: 50%;
+   background-color: #2f415c ;
+    padding-top: 10px;
+    text-align: left;
+    height: 280px;
+}
+.text-box h1 {
+  padding-top: 15px;
+    display: flex;
+    font-size: 30px;
+    padding-left: 50px;
+  
+}
+.text-box .skl , .skm{
+ 
+    font-size: 40px;
+    color: white;
+}
+.text-box p{
+    padding-top: 15px;
+    font-size: 21px;
+    padding-left: 50px;
+}
+.p2{
+    padding-top: 30px;
+}
+.sp{
+
+align-content: center;
+position: relative;
+
+
+}
+.div slider{
+align-items: center;
+
+
+}
+#slider{
+overflow: hidden;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 78%;
+
+
+}
+#slider figure{
+position:relative;
+width: 500%;
+margin: 10px;
+left:0;
+animation: 15s slider infinite;
+
+}
+#slider figure img{
+float: left;
+width: 20%;
+justify-content: center;
+}
+@keyframes slider{
+0%{
+    left: 0;
+
+}
+20%{
+    left:0;
+}
+25%{
+    left:-100%
+}
+45%{
+    left:-100%
+}
+50%{
+    left:-200%;
+}
+70%{
+    left: -200%;
+}
+75%{
+    left:-300%;
+}
+95%{
+    left: -300%;
+}
+100%{
+    left:-400%;
+}
+}
+#needs{
+display: flex;
+background-color: #afc2c3;
+align-items: center;
+padding-left:25%;
+}
+#needs img{
+width: 10%;
+position: relative;
+place-items: center;
+justify-content: center;
+padding: 18px;
+
+}
+#sm{
+display:flex;
+align-items: center;
+padding-left: 32%;
+
+
+
+}
+#sm img{
+width: 3%;
+position: relative;
+justify-content: center;
+padding: 19px;
+}
+
+/*footer {
+background-color: #00509e;
+color: white;
+text-align: center;
+height: 10%;
+position: absolute;
+width: 100%;
+}*/
+
+footer p{
+padding-top: 15px;
+}
+.main{
+background-color: #fff;
+}
+
+
+@-webkit-keyframes color-change {
+0% { color: red; }
+/*25%{ color:green;}*/
+50% { color: blue; }
+/*75% { color:yellow;}*/
+100% { color: red; }
+}
+@-moz-keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+@-ms-keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+@-o-keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+@keyframes color-change {
+0% { color: red; }
+50% { color: blue; }
+100% { color: red; }
+}
+.news 				{ 
+padding: 20px; /*border-bottom: 2px dashed #20619f;*/ 
+}
+.news h2 			{
+
+text-transform: uppercase;
+}
+.news marquee		{
+ max-height:200px;}
+.news p a 			{
+ color:inherit;font-size: 16px !important;
+}
+.news p 			{
+display:block;font-family: 'Roboto', sans-serif; font-size:16px; font-weight:600;width:100%; text-align: justify; 
+                 -webkit-animation: color-change 1s infinite;
+                 -moz-animation: color-change 1s infinite;
+                    -o-animation: color-change 1s infinite;
+                    -ms-animation: color-change 1s infinite;
+                 animation: color-change 1s infinite;
+                    }
+
+
+.newsbar{
+width: 98.5%;
+background-color: rgb(224, 222, 228);
+align-items: center;
+box-sizing: border-box;
+margin: 10px;
+
+}
+.newsbar .news marquee{
+height: 300px;
+}
+.newsbar .news h2{
+color: #5b08f5;
+padding: 10px;
+}
+
+
+
+
+
+/* Add media queries for different screen sizes */
+@media only screen and (max-width: 768px) {
+/* Styles for tablets and mobile devices */
+}
+
+@media only screen and (max-width: 480px) {
+/* Styles for mobile devices */
+}
+
+/* Use flexible grid or flexbox for layouts */
+
+    .MF{
+    COLOR:RED;
+    text-align: center;
+
+  }
+ 
+  .skm{
+     float: right;
+  }
+  .sm{
+    float: right;
+  }
+
+    h1, h2 {
+            color: #333;
+    }
+    .facts {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            position: relative;
+        }
+    .fact {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1px;
+            width: 20%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    .fact img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    .fact p {
+            margin-top: 10px;
+        }
+  *{
+        
+        margin: 0%;
+        padding: 0%;   
+        color: white;
+        
+}
+
+.sk{
+color:white;
+font-size: 30px;
+}
+.footer {
+    background-color: #2f415c;
+    padding: 20px 0;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #00bcd4;
+}
+
+.footer-section ul li a {
+    color: #e0e0e0;
+}
+
+.footer-section ul li a:hover {
+    color: #ff5252;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+}
+
+.bottom-bar p {
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+
