@@ -55,14 +55,14 @@
     .navbar ul li{
         list-style: none;
         display: inline-block;
-        padding: 8px 8px;
+        padding: 8px 10px;
         position: relative;
         border-color: white;
     }
     .navbar ul li a{
         color:white;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 18px;
     }
     .navbar ul li ::after{
         content:'';
