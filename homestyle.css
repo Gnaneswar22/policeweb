@@ -16,7 +16,7 @@
 /* Titles in the center */
 .titles {
     text-align: left;
-    padding-right:%;
+    padding-right:10%;
 }
 
 .sklm {
@@ -92,30 +92,42 @@ margin-top: 0;
 }
 .text-box{
     padding-top: 10px;
-    color:#2f415c;
-    position: relative;
-    top: 50%;
-   background-color: #2f415c ;
+ 
+    border: 1px #2f415c;
+   background-color: #e6e6ecec ;
     padding-top: 10px;
     text-align: left;
     height: 280px;
+    display: block;
 }
 .text-box h1 {
-  padding-top: 15px;
+ 
     display: flex;
-    font-size: 30px;
+    font-size: 35px;
     padding-left: 50px;
-  
+    color:  #f44336;
 }
 .text-box .skl , .skm{
- 
-    font-size: 40px;
-    color: white;
+    display: flex;
+    font-size: 45px;
+    color:  #f44336;
 }
 .text-box p{
+    margin-top: 10px;
     padding-top: 15px;
-    font-size: 21px;
+    font-size: 19px;
     padding-left: 50px;
+    color: #2f415c;
+  
+}
+.text-box img{
+   display: flex;
+    width: 340px;
+    float: right;
+   position: relative;
+ padding-top: 15px;
+    height: auto;
+  
 }
 .p2{
     padding-top: 30px;
