@@ -1,3 +1,7 @@
+body{
+    width: 90%;
+    margin-left:85px;
+}
 /* Header Section */
 .header {
     display: flex;
