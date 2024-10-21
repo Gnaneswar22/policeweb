@@ -1,7 +1,7 @@
 body{
             width: 90%; /* Adjust the width as needed */
             margin: 0 auto; /* Centers the div horizontally */
-            background-color: lightgray; /* Optional, just for visibility */
+            background-color: rgb(254, 252, 252); /* Optional, just for visibility */
            /* Optional, for spacing inside the div */
             text-align: center; /* Optional, centers text within the div */
 }
@@ -12,7 +12,7 @@ body{
     align-items: center;
     background-color: #2f415c;
     padding: 10px 20px;
-  
+    height: auto;
 }
 
 /* Logo Sizing */
@@ -187,15 +187,40 @@ body{
     }
 
     .navbar ul {
-        display: none;
-        flex-direction: row;
-        width: 100%;
+        display:none;
+        flex-direction: column;
+        width: 90%;
         background-color: #2f415c;
         text-align: center;
     }
 
     .navbar ul.show {
         display: flex;
+    }
+
+    .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 8px 10px;
+        position: relative;
+        border-color: white;
+    }
+    .navbar ul li a{
+        color:white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    .navbar ul li ::after{
+        content:'';
+        width: 0%;
+        height: 2px;
+        background: #f44336;  
+          display: block;
+        margin: auto;
+        transition: 0.3s;
+    }
+    .navbar ul li :hover::after{
+        width:40%;
     }
 }
 
