@@ -380,29 +380,23 @@ body{
     display: flex;
     background-color: #afc2c3;
     align-items: center;
-    padding-left:25%;
+  
     }
     #needs img{
     width: 10%;
     position: relative;
-    place-items: center;
-    justify-content: center;
     padding: 18px;
     
     }
     #sm{
     display:flex;
-    align-items: center;
-    padding-left: 32%;
-    
-    
-    
+    align-items: center;   
     }
     #sm img{
-    width: 3%;
+    width: 1%;
     position: relative;
     justify-content: center;
-    padding: 19px;
+   
     }
      
     footer p{
