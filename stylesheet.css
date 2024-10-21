@@ -1,6 +1,6 @@
 body{
     width: 90%;
-    margin-left:80px;
+    justify-content: center;
 }
 /* Header Section */
 .header {
