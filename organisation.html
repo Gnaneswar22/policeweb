@@ -15,6 +15,15 @@
             display: flex;
             flex-direction: column;
         }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            width: 90%;
+            margin-left: 80px;
+        }
+        
 
         /* Header Section */
         .header {
@@ -85,31 +94,41 @@
         }
 
         /* Navbar Styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2f415c;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
         .navbar {
-            background-color: #00509e;
+            padding-top: 10px;
+            background-color: #2f415c;
             padding: 12px 0;
             text-align: center;
             width: 100%;
             box-sizing: border-box;
         }
-
+        
         .navbar ul {
             list-style-type: none;
-            margin: 0;
+            margin: 5px;
             padding: 0;
             display: flex;
             justify-content: center;
         }
-
+        
         .navbar ul li {
             padding: 8px 10px;
             position: relative;
         }
-
+        
         .navbar ul li a {
             color: white;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         /* Responsive Navbar for smaller devices */
@@ -154,7 +173,7 @@
             .navbar ul {
                 display: none;
                 flex-direction: column;
-                background-color: #00509e;
+                background-color:#2f415c;
                 width: 100%;
                 text-align: center;
             }
@@ -174,7 +193,7 @@
 
         /* Footer Styles */
         footer {
-            background-color: #00509e;
+            background-color: #2f415c;
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -201,7 +220,7 @@
         </div>
         <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
     </header>
-
+<br>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="hamburger" onclick="toggleMenu()">
