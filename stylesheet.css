@@ -121,6 +121,36 @@ body{
     text-decoration: none;
     font-size: 18px;
 }
+.navbar{
+    flex: 1;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    margin-top: 0;
+    }
+    .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 8px 10px;
+        position: relative;
+        border-color: white;
+    }
+    .navbar ul li a{
+        color:white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    .navbar ul li ::after{
+        content:'';
+        width: 0%;
+        height: 2px;
+        background: #f44336;  
+          display: block;
+        margin: auto;
+        transition: 0.3s;
+    }
+    .navbar ul li :hover::after{
+        width:100%;
+    }
 
 /* Responsive Navbar for smaller devices */
 @media only screen and (max-width: 768px) {
@@ -472,6 +502,8 @@ body{
             }
         .fact p {
                 margin-top: 10px;
+                color: #2f415c;
+                padding-bottom: 18px;
             }
       *{
             
