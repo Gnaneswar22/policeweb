@@ -5,32 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Contact Numbers</title>
     <style>
+       
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            width: 90%;
+            margin-left: 80px;
         }
-        h1 {
-            text-align: center;
-            color: #9b1717;
+        
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2f415c;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Logo Sizing */
+        #sklmlogo {
+            width: 240px;
+            height: auto;
+        }
+
+        .titles {
+            text-align: left;
+            padding-right: 10%;
+            flex-grow: 1;
+        }
+
+        .sklm {
+            font-size: 50px;
+            color: white;
+            margin: 0;
+        }
+
+        .police {
+            font-size: 40px;
+            color: rgb(249, 0, 0);
+            margin: 0;
+        }
+
+        .aplogo {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Mobile Adjustments (to keep layout similar to desktop) */
+        @media only screen and (max-width: 768px) {
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+
+            #sklmlogo, .aplogo {
+                width: 80px;
+            }
+
+            .titles {
+                padding: 0 5px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .sklm {
+                font-size: 30px;
+            }
+
+            .police {
+                font-size: 28px;
+            }
+        }
+
+        /* Very Small Devices (up to 480px) */
+        @media only screen and (max-width: 480px) {
+            .header {
+                padding: 10px;
+                flex-direction: row;
+            }
+
+            #sklmlogo, .aplogo {
+                width: 60px;
+            }
+
+            .sklm {
+                font-size: 24px;
+            }
+
+            .police {
+                font-size: 22px;
+            }
+
+            .titles {
+                padding: 0 10px;
+                text-align: center;
+            }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+    background-color: #2f415c;
+    padding: 12px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    padding: 8px 10px;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.navbar{
+    flex: 1;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    margin-top: 0;
+    }
+    .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 8px 10px;
+        position: relative;
+        border-color: white;
+    }
+    .navbar ul li a{
+        color:white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+ 
+        /* Responsive Navbar for smaller devices */
+        @media only screen and (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                background-color: #2f415c;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .navbar ul li {
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
+
+        /* Hamburger menu on smaller screens */
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background-color: #2f415c;
+                width: 100%;
+                text-align: center;
+                text-color:white;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
         }
         .container {
             max-width: 600px;
             margin: auto;
-            background: #ffffffd9;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color:rgb(9, 13, 100);
+            background-color:rgb(134, 136, 157);
         }
-        ul {
+        .container h1{
+            color: rgb(163, 28, 28);
+
+        }
+        .container ul {
             list-style-type: none;
             padding: 0;
         }
-        li {
+        .container li {
             padding: 10px;
-            background: #eaeaea;
+            background:#415574;
             margin: 5px 0;
             border-radius: 5px;
         }
@@ -40,6 +239,36 @@
     </style>
 </head>
 <body>
+    <header class="header">
+        <a href="homepage.html"><img src="sklmplc.png" id="sklmlogo" alt="City Logo"></a>
+        <div class="titles">
+            <h1 class="sklm">SRIKAKULAM</h1>
+            <h1 class="police">POLICE</h1>
+        </div>
+        <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
+    </header>
+<br>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class>
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="organisation.html">ORGANISATION CHART</a></li>
+            <li><a href="know_your_policestation.html">KNOW YOUR POLICE STATION</a></li>
+            <li><a href="womenscrner.html">WOMEN'S CORNER</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contacts.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+             <br>
+
+
 
     <div class="container">
         <h1>Emergency Contact Numbers</h1>

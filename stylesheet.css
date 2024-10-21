@@ -1,4 +1,6 @@
 body{
+
+            font-family: Arial, sans-serif;
             width: 90%; /* Adjust the width as needed */
             margin: 0 auto; /* Centers the div horizontally */
             background-color: rgb(254, 252, 252); /* Optional, just for visibility */
