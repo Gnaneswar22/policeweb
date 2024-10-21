@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Srikakulam Police Department - Women's Corner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+       /* Header Section */
+       .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #00509e;
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Logo Sizing */
+    #sklmlogo {
+        width: 120px;
+        height: auto;
+    }
+
+    .titles {
+        text-align: left;
+        padding-right: 10%;
+        flex-grow: 1;
+    }
+
+    .sklm {
+        font-size: 50px;
+        color: white;
+        margin: 0;
+    }
+
+    .police {
+        font-size: 40px;
+        color: rgb(249, 0, 0);
+        margin: 0;
+    }
+
+    .aplogo {
+        width: 100px;
+        height: auto;
+    }
+
+    /* Mobile Adjustments (to keep layout similar to desktop) */
+    @media only screen and (max-width: 768px) {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+
+        #sklmlogo, .aplogo {
+            width: 80px;
+        }
+
+        .titles {
+            padding: 0 5px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sklm {
+            font-size: 30px;
+        }
+
+        .police {
+            font-size: 28px;
+        }
+    }
+
+    /* Very Small Devices (up to 480px) */
+    @media only screen and (max-width: 480px) {
+        .header {
+            padding: 10px;
+            flex-direction: row;
+        }
+
+        #sklmlogo, .aplogo {
+            width: 60px;
+        }
+
+        .sklm {
+            font-size: 24px;
+        }
+
+        .police {
+            font-size: 22px;
+        }
+
+        .titles {
+            padding: 0 10px;
+            text-align: center;
+        }
+    }
+
+    /* Navbar Styles */
+    .navbar {
+        background-color: #00509e;
+        padding: 12px 0;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar ul li {
+        padding: 8px 10px;
+        position: relative;
+    }
+
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Responsive Navbar for smaller devices */
+    @media only screen and (max-width: 768px) {
+        .navbar ul {
+            flex-direction: column;
+            display: none;
+            width: 100%;
+            background-color: #2f415c;
+        }
+
+        .navbar ul.show {
+            display: flex;
+        }
+
+        .navbar ul li {
+            padding: 10px 0;
+            text-align: center;
+        }
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+    }
+
+    /* Hamburger menu on smaller screens */
+    @media only screen and (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+
+        .navbar ul {
+            display: none;
+            flex-direction: column;
+            background-color: #00509e;
+            width: 100%;
+            text-align: center;
+        }
+
+        .navbar ul.show {
+            display: flex;
+        }
+    }
+
+        .container {
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #02080f;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .helpline {
+            background-color: #FFEFD5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            padding: 15px;
+            background-color: #E0FFFF;
+            border-radius: 5px;
+        }
+
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 9px;
+            position:fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+ 
+    <header class="header">
+        <a href="homepage.html"><img src="sklmplc.png" id="sklmlogo" alt="City Logo"></a>
+        <div class="titles">
+            <h1 class="sklm">SRIKAKULAM</h1>
+            <h1 class="police">POLICE</h1>
+        </div>
+        <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
+    </header>
+<br>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="organisation.html">ORGANISATION CHART</a></li>
+            <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
+            <li><a href="womens.html">WOMEN'S CORNER</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contacts.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+
+
+    <header>
+        <p>Dedicated to Serve and Protect</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Women's Corner</h2>
+            <p>Welcome to the Women's Corner of Srikakulam Police Department. We are committed to ensuring the safety and security of women in our region. Our team is available 24/7 to assist women in distress, and we offer a range of services specifically tailored to support women's safety and well-being.</p>
+            <p>If you or someone you know is facing harassment, domestic violence, or any other crime, please do not hesitate to reach out to us. We are here to help.</p>
+        </section>
+
+        <section>
+            <h3>Helpline Numbers</h3>
+            <div class="helpline">
+                <p><strong>Women's Helpline:</strong> 1091</p>
+                <p><strong>Domestic Violence Helpline:</strong> 181</p>
+                <p><strong>Child Helpline:</strong> 1098</p>
+                <p><strong>Police Control Room:</strong> 100</p>
+                <p><strong>Cyber Crime Helpline:</strong> 1930</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>How We Can Help</h3>
+            <ul>
+                <li><strong>Emergency Support:</strong> We respond promptly to any emergency reported by women.</li>
+                <li><strong>Counseling Services:</strong> Our team includes professional counselors who can guide and assist women in crisis.</li>
+                <li><strong>Legal Assistance:</strong> We provide legal aid to women facing harassment or domestic violence.</li>
+                <li><strong>Protection Orders:</strong> Assistance in securing protection orders for women at risk of harm.</li>
+                <li><strong>Safe Shelter:</strong> Immediate arrangements for safe shelter for women in need.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p><strong>Srikakulam Police Department</strong></p>
+                <p>Address: Police Headquarters, Srikakulam, Andhra Pradesh - 532001</p>
+                <p>Phone: +91-1234567890</p>
+                <p>Email: srikakulam-police@ap.gov.in</p>
+            </div>
+          
+        </section>
+    </div>
+    <section class="app">
+    <div>
+        <a href="https://play.google.com/store/apps/details?id=com.likhatech.disha&hl=en_IN"><img src="women.jpg"alt="Disha app" width="250" height="250"></a>
+      </div>
+    </section>
+    <br>
+    <footer>
+        <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

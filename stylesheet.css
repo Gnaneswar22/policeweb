@@ -1,96 +1,168 @@
-   *{
-    font-size: 15px;
-    
-   }
-   body{
-    padding:0;
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f415c;
+    padding: 10px 20px;
+  
+}
+
+/* Logo Sizing */
+#sklmlogo {
+    width: 300px;
+    height: auto;
+}
+
+.titles {
+    text-align: left;
+    padding-right: 10%;
+    flex-grow: 1;
+}
+
+.sklm {
+    font-size: 50px;
+    color: white;
     margin: 0;
-  size: 0;
-  width: 90%;    
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 88%;
-   
-   }
-   /* Header Section */
+}
+
+.police {
+    font-size: 40px;
+    color: rgb(249, 0, 0);
+    margin: 0;
+}
+
+.aplogo {
+    width: 100px;
+    height: auto;
+}
+
+/* Mobile Adjustments (to keep layout similar to desktop) */
+@media only screen and (max-width: 768px) {
     .header {
         display: flex;
-        justify-content: space-between; /* Aligns the logos to the edges */
-        align-items: center; /* Vertically centers content */
-        background-color: #2f415c; /* Background color for the header */
-        padding: 10px 20px; /* Add some padding for spacing */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        flex-direction: row; /* Maintain horizontal row layout */
     }
-    
-    /* Left Logo */
-    #sklmlogo {
-        width: 120px; /* Adjust the size of the logo as needed */
-        height: auto;
+
+    #sklmlogo, .aplogo {
+        width: 80px; /* Shrink logo size */
     }
-    
-    /* Titles in the center */
+
     .titles {
-        text-align: left;
-        padding-right:10%;
-    }
-    
-    .sklm {
-        font-size: 50px;
-        color: white;
-        margin: 0;
-    }
-    
-    .police {
-        font-size: 40px;
-        color: rgb(249, 0, 0);
-        margin: 0;
-    }
-    
-    /* Right Logo */
-    .aplogo {
-        width: 100px; /* Adjust the size of the logo as needed */
-        height: auto;
-    }
-    
-    
-    /* Navigation Bar Styles */
-    .navbar {
-        background-color: #2f415c; /* Different background color for navbar */
-        padding: 12px 0;
+        padding: 0 5px;
+        margin: 0 auto;
         text-align: center;
     }
-    
-    
-    .navbar{
-    flex: 1;
+
+    .sklm {
+        font-size: 30px; /* Adjust font size for mobile */
+    }
+
+    .police {
+        font-size: 28px; /* Adjust font size for mobile */
+    }
+}
+
+/* Very Small Devices (up to 480px) */
+@media only screen and (max-width: 480px) {
+    .header {
+        padding: 10px;
+        flex-direction: row; /* Keep elements in a row */
+    }
+
+    #sklmlogo, .aplogo {
+        width: 60px; /* Further reduce logo size */
+    }
+
+    .sklm {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .police {
+        font-size: 22px;
+    }
+
+    .titles {
+        padding: 0 10px;
+        text-align: center;
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #2f415c;
+    padding: 12px 0;
     text-align: center;
-    backdrop-filter: blur(20px);
-    margin-top: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    padding: 8px 10px;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Responsive Navbar for smaller devices */
+@media only screen and (max-width: 768px) {
+    .navbar ul {
+        flex-direction: row; /* Keep items in a row */
     }
-    .navbar ul li{
-        list-style: none;
-        display: inline-block;
-        padding: 8px 10px;
-        position: relative;
-        border-color: white;
+
+    .navbar ul li {
+        padding: 10px 0;
     }
-    .navbar ul li a{
-        color:white;
-        text-decoration: none;
-        font-size: 18px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+/* Hamburger menu on smaller screens */
+@media only screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
     }
-    .navbar ul li ::after{
-        content:'';
-        width: 0%;
-        height: 2px;
-        background: #f44336;  
-          display: block;
-        margin: auto;
-        transition: 0.3s;
+
+    .navbar ul {
+        display: none;
+        flex-direction: row;
+        width: 100%;
+        background-color: #2f415c;
+        text-align: center;
     }
-    .navbar ul li :hover::after{
-        width:100%;
+
+    .navbar ul.show {
+        display: flex;
     }
+}
+
+
     /* Marquee for Recent Activity */
     .headlines {
         background-color: #2f415c;
@@ -137,9 +209,46 @@
         border-radius: 5px;
     }
     
-    .p2{
-        padding-top: 30px;
+    /* Responsive Styles */
+    @media only screen and (max-width: 768px) {
+        .text-box {
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;
+        }
+    
+        .text-box img {
+            width: 80%; /* Adjust the image size for smaller screens */
+            margin-left: 0;
+            margin-top: 20px;
+        }
+    
+        .text-box h1 {
+            font-size: 28px; /* Slightly smaller heading */
+        }
+    
+        .text-box p {
+            font-size: 16px; /* Slightly smaller paragraph text */
+        }
     }
+    
+    @media only screen and (max-width: 480px) {
+        .text-box {
+            padding: 15px; /* Reduce padding for small mobile screens */
+        }
+    
+        .text-box img {
+            width: 100%; /* Make the image take up full width */
+        }
+    
+        .text-box h1 {
+            font-size: 24px; /* Further reduce heading size */
+        }
+    
+        .text-box p {
+            font-size: 14px; /* Further reduce paragraph text size */
+        }
+    }
+    
     .sp{
     
     align-content: center;
@@ -232,16 +341,7 @@
     justify-content: center;
     padding: 19px;
     }
-    
-    /*footer {
-    background-color: #00509e;
-    color: white;
-    text-align: center;
-    height: 10%;
-    position: absolute;
-    width: 100%;
-    }*/
-    
+     
     footer p{
     padding-top: 15px;
     }

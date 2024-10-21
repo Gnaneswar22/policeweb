@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikakulam Police Department</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #00509e;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Logo Sizing */
+        #sklmlogo {
+            width: 120px;
+            height: auto;
+        }
+        
+        .titles {
+            text-align: left;
+            padding-right: 10%;
+            flex-grow: 1;
+        }
+        
+        .sklm {
+            font-size: 50px;
+            color: white;
+            margin: 0;
+        }
+        
+        .police {
+            font-size: 40px;
+            color: rgb(249, 0, 0);
+            margin: 0;
+        }
+        
+        .aplogo {
+            width: 100px;
+            height: auto;
+        }
+        
+        /* Mobile Adjustments (to keep layout similar to desktop) */
+        @media only screen and (max-width: 768px) {
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+        
+            #sklmlogo, .aplogo {
+                width: 80px;
+            }
+        
+            .titles {
+                padding: 0 5px;
+                margin: 0 auto;
+                text-align: center;
+            }
+        
+            .sklm {
+                font-size: 30px;
+            }
+        
+            .police {
+                font-size: 28px;
+            }
+        }
+        
+        /* Very Small Devices (up to 480px) */
+        @media only screen and (max-width: 480px) {
+            .header {
+                padding: 10px;
+                flex-direction: row;
+            }
+        
+            #sklmlogo, .aplogo {
+                width: 60px;
+            }
+        
+            .sklm {
+                font-size: 24px;
+            }
+        
+            .police {
+                font-size: 22px;
+            }
+        
+            .titles {
+                padding: 0 10px;
+                text-align: center;
+            }
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: #00509e;
+            padding: 12px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .navbar ul li {
+            padding: 8px 10px;
+            position: relative;
+        }
+        
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        /* Responsive Navbar for smaller devices */
+        @media only screen and (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                background-color: #2f415c;
+            }
+        
+            .navbar ul.show {
+                display: flex;
+            }
+        
+            .navbar ul li {
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+        
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
+        
+        /* Hamburger menu on smaller screens */
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+        
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background-color: #00509e;
+                width: 100%;
+                text-align: center;
+            }
+        
+            .navbar ul.show {
+                display: flex;
+            }
+        }
+        
+        /* Map and Dropdown Section */
+        .container {
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        /* Ensure map takes full width and is responsive */
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        /* Responsive Dropdown */
+        select.form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        /* Footer Section */
+        footer {
+            background-color: #00509e;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        
+        /* Mobile adjustments for map */
+        @media only screen and (max-width: 768px) {
+            #map {
+                height: 300px;
+            }
+        }
+        
+        /* Very small device adjustments for map */
+        @media only screen and (max-width: 480px) {
+            #map {
+                height: 250px;
+            }
+        }
+        
+    </style>
+    <!-- Google Maps JavaScript API -->
+    <script async defer src="https://maps.gomaps.pro/maps/api/js?key=AlzaSylRAnFAvAKfs-cDWhxsaEMQ5v2RoETSKfl&callback=initMap"></script>
+    <script>
+        // Police station data
+        const policeStationsData = {
+            "Srikakulam I Town": { coords: { lat: 18.29379415, lng: 83.8954661 } },
+            "Srikakulam II Town": { coords: { lat: 18.29580307, lng: 83.89439602 } },
+            "Amadalavalasa": { coords: { lat: 18.4126473, lng: 83.9024714 } },
+            "Kasibugga Urban": { coords: { lat: 18.76040782, lng: 84.41728723 } },
+            "Kasibugga Rural": { coords: { lat: 18.7715723, lng: 84.4106576 } },
+            "Tekkali": { coords: { lat: 18.6014578, lng: 84.2293932 } },
+            "Sompeta": { coords: { lat: 18.94468036, lng: 84.58441993 } },
+            "Palakonda": { coords: { lat: 18.5978917, lng: 83.7628311 } },
+            "Ichapuram": { coords: { lat: 19.11408495, lng: 84.69118419 } },
+            "Mandasa": { coords: { lat: 18.8724878, lng: 84.4592431 } },
+            "Narasanapeta": { coords: { lat: 18.4181183, lng: 84.0455506 } },
+            "Ponduru": { coords: { lat: 18.3487186, lng: 83.7549105 } },
+            "Etcherla": { coords: { lat: 18.2803865, lng: 83.828617 } },
+            "Gara": { coords: { lat: 18.3316956, lng: 84.0517674 } },
+        };
+
+        let map;
+        let markers = [];
+
+        // Initialize Google Map
+        function initMap() {
+            const srikakulamCenter = { lat: 18.29379415, lng: 83.8954661 };
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 8,
+                center: srikakulamCenter, // Center of Srikakulam
+            });
+
+            // Add markers for all police stations
+            for (const station in policeStationsData) {
+                const marker = new google.maps.Marker({
+                    position: policeStationsData[station].coords,
+                    map: map,
+                    title: station,
+                });
+                markers.push(marker);
+            }
+        }
+
+        // Filter and update the map based on mandal selection
+        function updateMapForMandal() {
+            const selectedMandal = document.getElementById("mandal").value;
+            const policeStationDetails = policeStationsData[selectedMandal];
+
+            // Display details
+            const details = document.getElementById("mandal-details");
+            const heading = document.getElementById("mandal-heading");
+            const stationList = document.getElementById("police-station-list");
+
+            heading.textContent = `${selectedMandal} Police Stations`;
+
+            // Clear previous station list
+            stationList.innerHTML = '';
+
+            // Add corresponding stations to the list
+            if (policeStationDetails) {
+                const li = document.createElement("li");
+                li.textContent = selectedMandal;
+                stationList.appendChild(li);
+            }
+
+            map.setCenter(policeStationDetails.coords);
+            map.setZoom(10);
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="homepage.html"><img src="sklmplc.png" id="sklmlogo" alt="City Logo"></a>
+        <div class="titles">
+            <h1 class="sklm">SRIKAKULAM</h1>
+            <h1 class="police">POLICE</h1>
+        </div>
+        <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
+    </header>
+<br>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="organisation.html">ORGANISATION CHART</a></li>
+            <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
+            <li><a href="womens.html">WOMEN'S CORNER</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contacts.html">CONTACT</a></li>
+        </ul>
+    </nav>
+<!-- Mandal Dropdown & Map -->
+<div class="container">
+    <div class="form-group">
+        <label for="mandal">Select Mandal:</label>
+        <select class="form-control" id="mandal" onchange="updateMapForMandal()">
+  <option value="">Select Mandal</option>
+  <option value="Srikakulam">Srikakulam</option>
+  <option value="Gara">Gara</option>
+  <option value="Polaki">Polaki</option>
+  <option value="Narasannapeta">narasannapeta</option>
+  <option value="Amadalavalasa">Amadalavalasa</option>
+  <option value="Sarubujjili">Sarubujjili</option>
+  <option value="Burja">Burja</option>
+  <option value="Ponduru">Ponduru</option>
+  <option value="Etcherla">Etcherla</option>
+  <option value="Laveru">Laveru</option>
+  <option value="Ranasthalam">Ranasthalam</option>
+  <option value="G Sigadam">G Sigadam</option>
+  <option value="Jalumuru">Jalumuru</option>
+  <option value="Tekkali">Tekkali</option>
+  <option value="Kota Bommali">Kota Bommali</option>
+  <option value="Santha Bommali">Santha Bommali</option>
+  <option value="Saravakota">Saravakota</option>
+  <option value="Pathapatnam">Pathapatnam</option>
+  <option value="Meliyaputti">Meliyaputti</option>
+  <option value="Hiramandalam">Hiramandalam</option>
+  <option value="Kotthuru">KOtthuru</option>
+  <option value="L N Peta">L N Peta</option>
+  <option value="Nandigam">Nandigam</option>
+  <option value="Palasa">Palasa</option>
+  <option value="Sompeta">Sompeta</option>
+  <option value="Kaviti">Kaviti</option>
+  <option value="Kanchili">Kanchili</option>
+  <option value="Ecchapuram">Ecchapuram</option>
+  <option value="Vajrapu KOtthuru">Vajrapu Kotthuru</option>
+  <option value="Mandasa">Mandasa</option>
+</select>
+    </div>
+    <div id="map"></div>
+    <div id="mandal-details">
+        <h2 id="mandal-heading">Police Stations</h2>
+        <ul id="police-station-list"></ul>
+    </div>
+</div>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('show');
+        }
+    </script>
+
+</body>
+
+</html>

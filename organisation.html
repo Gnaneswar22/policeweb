@@ -6,58 +6,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Srikakulam Police Department</title>
     <style>
-        body {
+        /* General Styles */
+        body, html {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        header {
+        /* Header Section */
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #003366;
-            padding: 10px 20px;
-            color: white;
-        }
-
-        header img {
-            height: 60px;
-        }
-
-        nav {
             background-color: #00509e;
-            padding: 10px;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        nav ul {
+        /* Logo Sizing */
+        #sklmlogo {
+            width: 120px;
+            height: auto;
+        }
+
+        .titles {
+            text-align: left;
+            padding-right: 10%;
+            flex-grow: 1;
+        }
+
+        .sklm {
+            font-size: 50px;
+            color: white;
+            margin: 0;
+        }
+
+        .police {
+            font-size: 40px;
+            color: rgb(249, 0, 0);
+            margin: 0;
+        }
+
+        .aplogo {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Mobile Adjustments */
+        @media only screen and (max-width: 768px) {
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+            }
+
+            #sklmlogo, .aplogo {
+                width: 80px;
+            }
+
+            .titles {
+                padding: 0 5px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .sklm {
+                font-size: 30px;
+            }
+
+            .police {
+                font-size: 28px;
+            }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #00509e;
+            padding: 12px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
         }
 
-        nav ul li {
-            display: inline;
+        .navbar ul li {
+            padding: 8px 10px;
+            position: relative;
         }
 
-        nav ul li a {
+        .navbar ul li a {
             color: white;
             text-decoration: none;
-            padding: 14px 20px;
-            display: block;
-            font-size: 16px;
+            font-size: 18px;
         }
 
-        nav ul li a:hover {
-            background-color: #003366;
+        /* Responsive Navbar for smaller devices */
+        @media only screen and (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                background-color: #2f415c;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .navbar ul li {
+                padding: 10px 0;
+                text-align: center;
+            }
         }
-        .chart img{
-           height: auto;
-           width: 100%;
-           align-items: center;
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
         }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
+
+        /* Hamburger menu on smaller screens */
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background-color: #00509e;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+        }
+
+        /* Chart Image Styles */
+        .chart img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Footer Styles */
         footer {
             background-color: #00509e;
             color: white;
@@ -66,39 +181,63 @@
             position: relative;
             width: 100%;
             bottom: 0;
+            margin-top: auto; /* Makes sure footer sticks to the bottom */
+        }
+
+        /* Ensure the body takes at least the full viewport height */
+        .content {
+            flex-grow: 1;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <img src="applogo.png" alt="AP Police Logo" />
-        <h1>Srikakulam Police Department</h1>
-        <img src="sklmplc.png" alt="Srikakulam Police Logo" />
+    <header class="header">
+        <a href="homepage.html"><img src="sklmplc.png" id="sklmlogo" alt="City Logo"></a>
+        <div class="titles">
+            <h1 class="sklm">SRIKAKULAM</h1>
+            <h1 class="police">POLICE</h1>
+        </div>
+        <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
     </header>
 
     <!-- Navigation Bar -->
-    <nav>
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <ul>
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="womens.html">Women's Corner</a></li>
-            <li><a href="contacts.html">CONTACTS</a></li>
-           
+            <li><a href="#">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="organisation.html">ORGANISATION CHART</a></li>
+            <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
+            <li><a href="womens.html">WOMEN'S CORNER</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contacts.html">CONTACT</a></li>
         </ul>
     </nav>
-     <div class="chart">
-        <img src="organizationchart.jpg" alt="organisation chart">
-     </div>
+
+    <div class="content">
+        <!-- Chart Image Section -->
+        <div class="chart">
+            <img src="organizationchart.jpg" alt="organisation chart">
+        </div>
+    </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
     </footer>
-   
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>
