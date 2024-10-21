@@ -4,6 +4,7 @@ body{
             background-color: rgb(254, 252, 252); /* Optional, just for visibility */
            /* Optional, for spacing inside the div */
             text-align: center; /* Optional, centers text within the div */
+           
 }
 /* Header Section */
 .header {
