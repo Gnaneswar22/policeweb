@@ -5,16 +5,336 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Srikakulam Police Department - Accident Analysis</title>
     <link rel="stylesheet" href="styles.css">
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #00509e;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Logo Sizing */
+        #sklmlogo {
+            width: 120px;
+            height: auto;
+        }
+
+        .titles {
+            text-align: left;
+            padding-right: 10%;
+            flex-grow: 1;
+        }
+
+        .sklm {
+            font-size: 50px;
+            color: white;
+            margin: 0;
+        }
+
+        .police {
+            font-size: 40px;
+            color: rgb(249, 0, 0);
+            margin: 0;
+        }
+
+        .aplogo {
+            width: 100px;
+            height: auto;
+        }
+        .head{
+            font-size: 10px;
+            align-content: center;
+            width: 70%;
+        }
+
+        /* Mobile Adjustments (to keep layout similar to desktop) */
+        @media only screen and (max-width: 768px) {
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+
+            #sklmlogo, .aplogo {
+                width: 80px;
+            }
+
+            .titles {
+                padding: 0 5px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .sklm {
+                font-size: 30px;
+            }
+
+            .police {
+                font-size: 28px;
+            }
+        }
+
+        /* Very Small Devices (up to 480px) */
+        @media only screen and (max-width: 480px) {
+            .header {
+                padding: 10px;
+                flex-direction: row;
+            }
+
+            #sklmlogo, .aplogo {
+                width: 60px;
+            }
+
+            .sklm {
+                font-size: 24px;
+            }
+
+            .police {
+                font-size: 22px;
+            }
+
+            .titles {
+                padding: 0 10px;
+                text-align: center;
+            }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #00509e;
+            padding: 12px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul li {
+            padding: 8px 10px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Responsive Navbar for smaller devices */
+        @media only screen and (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                background-color: #2f415c;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .navbar ul li {
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
+
+        /* Hamburger menu on smaller screens */
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background-color: #00509e;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 14px;
+            padding: 5px 0;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        .card-1 {
+            background-color: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 9px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 1000px;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #slider {
+            overflow: hidden;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        #slider figure {
+            position: relative;
+            width: 500%;
+            margin: 10px;
+            left: 0;
+            animation: 15s slider infinite;
+        }
+
+        #slider figure img {
+            float: left;
+            width: 20%;
+            justify-content: center;
+        }
+
+        @keyframes slider {
+            0% {
+                left: 0;
+            }
+
+            20% {
+                left: 0;
+            }
+
+            25% {
+                left: -100%
+            }
+
+            45% {
+                left: -100%
+            }
+
+            50% {
+                left: -200%;
+            }
+
+            70% {
+                left: -200%;
+            }
+
+            75% {
+                left: -300%;
+            }
+
+            95% {
+                left: -300%;
+            }
+
+            100% {
+                left: -400%;
+            }
+        }
+
+        footer {
+            background-color: #00509e;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
 </head>
 <body>
     <header>
-        <h1>Srikakulam Police Department</h1>
         
+       
            
+    <header class="header">
+        <a href="homepage.html"><img src="sklmplc.png" id="sklmlogo" alt="City Logo"></a>
+        <div class="titles">
+            <h1 class="sklm">SRIKAKULAM</h1>
+            <h1 class="police">POLICE</h1>
+        </div>
+        <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
+    </header>
         
     </header>
 
-    <main>
+    <main class="head">
+        <h1>Srikakulam Police Department</h1>
         <section id="home">
             <h2>Welcome to the Srikakulam Police Department</h2>
             <p>Your safety is our priority. We are committed to serving and protecting our community.</p>
