@@ -188,31 +188,79 @@
         }
         
         /* Map and Dropdown Section */
-        .container {
-            padding: 20px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        /* Ensure map takes full width and is responsive */
-        #map {
-            height: 400px;
-            width: 100%;
-            margin-top: 20px;
-        }
-        
-        /* Responsive Dropdown */
-        select.form-control {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        
-        /* Footer Section */
+.container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#map {
+    width: 50%;
+    height: 400px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#mandal-details {
+    width: 35%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+}
+
+#police-station-list li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the dropdown */
+select {
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Responsive layout for smaller screens */
+@media only screen and (max-width: 768px) {
+    #map {
+        width: 100%;
+        height: 300px;
+        margin: 0 0 20px 0;
+    }
+
+    #mandal-details {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #map {
+        height: 250px;
+    }
+    
+    #mandal-details {
+        padding: 15px;
+    }
+
+    #police-station-list li {
+        font-size: 14px;
+    }
+}
+/* Footer Section */
         footer {
             background-color: #00509e;
             color: white;
@@ -240,74 +288,136 @@
     </style>
     <!-- Google Maps JavaScript API -->
     <script async defer src="https://maps.gomaps.pro/maps/api/js?key=AlzaSylRAnFAvAKfs-cDWhxsaEMQ5v2RoETSKfl&callback=initMap"></script>
-    <script>
-        // Police station data
-        const policeStationsData = {
-            "Srikakulam I Town": { coords: { lat: 18.29379415, lng: 83.8954661 } },
-            "Srikakulam II Town": { coords: { lat: 18.29580307, lng: 83.89439602 } },
-            "Amadalavalasa": { coords: { lat: 18.4126473, lng: 83.9024714 } },
-            "Kasibugga Urban": { coords: { lat: 18.76040782, lng: 84.41728723 } },
-            "Kasibugga Rural": { coords: { lat: 18.7715723, lng: 84.4106576 } },
-            "Tekkali": { coords: { lat: 18.6014578, lng: 84.2293932 } },
-            "Sompeta": { coords: { lat: 18.94468036, lng: 84.58441993 } },
-            "Palakonda": { coords: { lat: 18.5978917, lng: 83.7628311 } },
-            "Ichapuram": { coords: { lat: 19.11408495, lng: 84.69118419 } },
-            "Mandasa": { coords: { lat: 18.8724878, lng: 84.4592431 } },
-            "Narasanapeta": { coords: { lat: 18.4181183, lng: 84.0455506 } },
-            "Ponduru": { coords: { lat: 18.3487186, lng: 83.7549105 } },
-            "Etcherla": { coords: { lat: 18.2803865, lng: 83.828617 } },
-            "Gara": { coords: { lat: 18.3316956, lng: 84.0517674 } },
-        };
-
-        let map;
-        let markers = [];
-
-        // Initialize Google Map
-        function initMap() {
-            const srikakulamCenter = { lat: 18.29379415, lng: 83.8954661 };
-
-            map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 8,
-                center: srikakulamCenter, // Center of Srikakulam
-            });
-
-            // Add markers for all police stations
-            for (const station in policeStationsData) {
-                const marker = new google.maps.Marker({
-                    position: policeStationsData[station].coords,
-                    map: map,
-                    title: station,
-                });
-                markers.push(marker);
-            }
+    
+<!-- Script to include Google Maps and manage police station data -->
+<script>
+    // Police station data
+    const policeStationsData = {
+        "Srikakulam I Town": {
+            coords: { lat: 18.29379415, lng: 83.8954661 },
+            contact: "1234567890",
+            address: "Srikakulam I Town, Srikakulam District, Andhra Pradesh"
+        },
+        "Srikakulam II Town": {
+            coords: { lat: 18.29580307, lng:83.89439602 },
+            contact: "2345678901",
+            address: "Srikakulam II Town, Srikakulam District, Andhra Pradesh"
+        },
+        "Amadalavalasa": {
+            coords: { lat: 18.4126473, lng: 83.9024714 },
+            contact: "3456789012",
+            address: "Amadalavalasa, Srikakulam District, Andhra Pradesh"
+        },
+        "Kasibugga Urban": {
+            coords: { lat: 18.76040782, lng: 84.41728723 },
+            contact: "4567890123",
+            address: "Kasibugga Urban, Srikakulam District, Andhra Pradesh"
+        },
+        "Kasibugga Rural": {
+            coords: { lat: 18.7715723, lng: 84.4106576 },
+            contact: "5678901234",
+            address: "Kasibugga Rural, Srikakulam District, Andhra Pradesh"
+        },
+        "Tekkali": {
+            coords: { lat: 18.6014578, lng: 84.2293932 },
+            contact: "6789012345",
+            address: "Tekkali, Srikakulam District, Andhra Pradesh"
+        },
+        "Sompeta": {
+            coords: { lat: 18.94468036, lng: 84.58441993 },
+            contact: "7890123456",
+            address: "Sompeta, Srikakulam District, Andhra Pradesh"
+        },
+        "Palakonda": {
+            coords: { lat: 18.5978917, lng: 83.7628311 },
+            contact: "8901234567",
+            address: "Palakonda, Srikakulam District, Andhra Pradesh"
+        },
+        "Ichapuram": {
+            coords: { lat: 19.11408495, lng: 84.69118419 },
+            contact: "9012345678",
+            address: "Ichapuram, Srikakulam District, Andhra Pradesh"
+        },
+        "Mandasa": {
+            coords: { lat: 18.8724878, lng: 84.4592431 },
+            contact: "0123456789",
+            address: "Mandasa, Srikakulam District, Andhra Pradesh"
+        },
+        "Narasanapeta": {
+            coords: { lat: 18.4181183, lng: 84.0455506 },
+            contact: "1234509876",
+            address: "Narasanapeta, Srikakulam District, Andhra Pradesh"
+        },
+        "Ponduru": {
+            coords: { lat: 18.3487186, lng: 83.7549105 },
+            contact: "2345612345",
+            address: "Ponduru, Srikakulam District, Andhra Pradesh"
+        },
+        "Etcherla": {
+            coords: { lat: 18.2803865, lng: 83.828617 },
+            contact: "3456709876",
+            address: "Etcherla, Srikakulam District, Andhra Pradesh"
+        },
+        "Gara": {
+            coords: { lat: 18.3316956, lng: 84.0517674 },
+            contact: "4567893456",
+            address: "Gara, Srikakulam District, Andhra Pradesh"
         }
+    };
 
-        // Filter and update the map based on mandal selection
-        function updateMapForMandal() {
-            const selectedMandal = document.getElementById("mandal").value;
-            const policeStationDetails = policeStationsData[selectedMandal];
+    let map;
+    let marker;  // Declare the marker variable
 
-            // Display details
-            const details = document.getElementById("mandal-details");
-            const heading = document.getElementById("mandal-heading");
-            const stationList = document.getElementById("police-station-list");
+    // Initialize the Google Map
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 18.29379415, lng: 83.8954661 }, // Default center (Srikakulam I Town)
+            zoom: 10
+        });
+    }
 
-            heading.textContent = `${selectedMandal} Police Stations`;
+    // Update the map and police station details when the user selects a mandal
+    function updateMapForMandal() {
+        const selectedMandal = document.getElementById("mandal").value;
+        const policeStationDetails = policeStationsData[selectedMandal];
 
-            // Clear previous station list
-            stationList.innerHTML = '';
+        const heading = document.getElementById("mandal-heading");
+        const stationList = document.getElementById("police-station-list");
 
-            // Add corresponding stations to the list
-            if (policeStationDetails) {
-                const li = document.createElement("li");
-                li.textContent = selectedMandal;
-                stationList.appendChild(li);
-            }
+        heading.textContent = `${selectedMandal} Police Stations`;
 
+        // Clear the previous station list
+        stationList.innerHTML = '';
+
+        if (policeStationDetails) {
+            // Add the selected police station details to the list
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <strong>Station Name:</strong> ${selectedMandal}<br>
+                <strong>Address:</strong> ${policeStationDetails.address}<br>
+                <strong>Contact:</strong> ${policeStationDetails.contact}
+            `;
+            stationList.appendChild(li);
+
+            // Update the map location
             map.setCenter(policeStationDetails.coords);
-            map.setZoom(10);
+            map.setZoom(12);
+
+            // Place marker on the selected station
+            if (marker) {
+                marker.setMap(null);  // Remove previous marker
+            }
+            marker = new google.maps.Marker({
+                position: policeStationDetails.coords,
+                map: map,
+                title: selectedMandal
+            });
         }
-    </script>
+    }
+</script>
+
+<!-- Google Maps API Script -->
+<script async defer src="https://maps.gomaps.pro/maps/api/js?key=AlzaSylRAnFAvAKfs-cDWhxsaEMQ5v2RoETSKfl&callback=initMap"></script>
 </head>
 
 <body>
@@ -344,7 +454,8 @@
         <label for="mandal">Select Mandal:</label>
         <select class="form-control" id="mandal" onchange="updateMapForMandal()">
   <option value="">Select Mandal</option>
-  <option value="Srikakulam">Srikakulam</option>
+  <option value="Srikakulam I Town">Srikakulam I Town</option>
+  <option value="Srikakulam II Town">Srikakulam II Town</option>
   <option value="Gara">Gara</option>
   <option value="Polaki">Polaki</option>
   <option value="Narasannapeta">narasannapeta</option>
@@ -383,7 +494,9 @@
     </div>
 </div>
 
-
+<br>
+<br>
+<br>
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Srikakulam Police Department. All Rights Reserved.</p>
