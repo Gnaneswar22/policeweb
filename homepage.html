@@ -7,7 +7,7 @@
    
     <title>Srikakulam City Police</title>
 
-<link rel="stylesheet" href="homestyle.css">     
+<link rel="stylesheet" href="stylesheet.css">     
 <style>
 
 </style>
@@ -26,18 +26,24 @@
 
 <!-- Navigation Bar -->
 <nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <ul>
-        <li><a href="">HOME</a></li>
+        <li><a href="#">HOME</a></li>
         <li><a href="aboutus.html">ABOUT US</a></li>
         <li><a href="organisation.html">ORGANISATION CHART</a></li>
-        <li><a href="knowurplc.html">KNOW YOUR POLICE STATION</a></li>
-        <li><a href="womens.html">WOMEN'S CORNER</a></li>
+        <li><a href="know_your_policestation.html">KNOW YOUR POLICE STATION</a></li>
+        <li><a href="womenscrner.html">WOMEN'S CORNER</a></li>
         <li><a href="services.html">SERVICES</a></li>
         <li><a href="contacts.html">CONTACT</a></li>
        <li> <a href="#" onclick="window.close();">Quit</a></li>
-   
+
     </ul>
 </nav><br>
+
 
 <marquee class="headlines">RECENT ACTIVITY.</marquee>
 
@@ -74,23 +80,21 @@
             </div>
               
                  
-                   <br><hr>
+                   <br>
                    <header>
                    
                 </header>
                 
                 <div class="newsbar">
 
-                    <div class="news">
+                    <div class="news" method="POST" >
                         <h2 style="text-align:center;  text-decoration: underline; ">Latest News</h2>
-                        
-                         
                          
                          <marquee behavior="scroll" direction="up" onmouseover="this.stop();" onmouseout="this.start();">
-                    
+                        <form action="news_articles.php" method="POST">
                              
                     
-                                <p><a href="citizen-services/INSTRUCTIONS TO SUBMIT EVENT PERMISSION APPLICATION.pdf" target="_blank">Instuctions to Submit Event Permission Application&nbsp;&nbsp;For Download Form Click Here<img src="new.gif"></a></p>
+                                <p><a href="Data+Science_Academy+Curriculum.pdf" target="_blank">Instuctions to Submit Event Permission Application&nbsp;&nbsp;For Download Form Click Here<img src="new.gif"></a></p>
                      
                                  &nbsp;
                                 &nbsp;
@@ -189,9 +193,10 @@
                     
                     
                                 <p>Citizens are Advised to Report the Cyber offenses in concerned L & O Police Stations. Now we are Registering the Cyber Crime Cases in local Law & Order Police Stations only.<img src="new.gif"></p>
-                        </marquee>
+                            </form>
+                            </marquee>
                     
-                        </div>
+                        </div><br>
 
 
                     </div>
@@ -217,9 +222,9 @@
                             <p>Prioritize Safety: Follow rules for a safer society.</p>
                         </div>
                     </div>
-                </section>
+                </section><br>
                 
-             <hr>
+
 
                 <div id="needs" >
                   <figure>
@@ -231,7 +236,7 @@
                   </figure>
 
 
-                </div>
+                </div><br>
 
    
 
@@ -249,10 +254,9 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href="knowurplc.html">Know Your Police Station</a></li>
+                    <li><a href="know_your_policestation.html">Know Your Police Station</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="">Notifications</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
                 </ul>
             </div>
     
@@ -272,7 +276,7 @@
                     <a href="https://www.twitter.com"><img src="twitter.png" alt="Twitter"></a>
                     <a href="https://www.instagram.com/sklmpolice?igsh=c21ucnA5aXdoNmRw"><img src="instagram.png" alt="Instagram"></a>
                     <a href="https://www.youtube.com"><img src="youtube.png" alt="YouTube"></a>
-                    <a href="https://www.whatsapp.com"><img src="whatsapp.png" alt="WhatsApp"></a>
+                    <a href="https://api.whatsapp.com/send?phone=+917989480856" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>
@@ -284,7 +288,12 @@
     </footer>
                                
                                 
-
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('show');
+        }
+    </script>
                 
          
 </body>

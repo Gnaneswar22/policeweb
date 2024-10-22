@@ -12,17 +12,89 @@
         background-color: #f8f9fa;
         text-align: center;
     }
-    header {
-        background-color: #007bff;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-    }
+    .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2f415c;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
     
     h1, h2 {
         margin: 0;
     }
-    
+    #sklmlogo, .aplogo {
+                width: 80px;
+            }
+            .sklm {
+            font-size: 50px;
+            color: white;
+            margin: 0;
+        }
+
+        .police {
+            font-size: 40px;
+            color: rgb(249, 0, 0);
+            margin: 0;
+        }
+
+        .aplogo {
+            width: 100px;
+            height: auto;
+        }
+
+     /* Navbar Styles */
+     .navbar {
+            background-color:#2f415c;
+            padding: 12px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul li {
+            padding: 8px 10px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Responsive Navbar for smaller devices */
+        @media only screen and (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                background-color: #2f415c;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .navbar ul li {
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+
+
+
+
     section {
         margin: 20px 0;
         padding: 20px;
@@ -63,14 +135,40 @@
         text-align: center;
         margin-top: 30px;
         font-size: 0.9em;
-        background-color: #117cee;
+        background-color: #2f415c;
     }
 </style>    
 </head>
 <body>
-    <header>
-        <h1>Srikakulam Police Department</h1>
-        <p>Message to Srikakulam Police</p>
+    
+    <header class="header">
+        <a href="homepage.html"><img src="sklmplc.png" id="sklmlogo" alt="City Logo"></a>
+        <div class="titles">
+            <h1 class="sklm">SRIKAKULAM</h1>
+            <h1 class="police">POLICE</h1>
+        </div>
+        <a href="homepage.html"><img class="aplogo" src="applogo.png" alt="App Logo"></a>
+    </header>
+<br>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="organisation.html">ORGANISATION CHART</a></li>
+            <li><a href="know_your_policestation.html">KNOW YOUR POLICE STATION</a></li>
+            <li><a href="womenscrner.html">WOMEN'S CORNER</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contacts.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+
     </header>
 
     <main>
